@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harland Education — Teacher Announcement | June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-lt: #E8C97A;
+  --gold-pale: #F5EDDA;
+  --obs: #0D0D0F;
+  --obs2: #161618;
+  --obs3: #1E1E21;
+  --cream: #FAF7F2;
+  --slate: rgba(250,247,242,0.55);
+  --mist: rgba(250,247,242,0.28);
+  --bd: rgba(255,255,255,0.07);
+  --bd-gold: rgba(201,168,76,0.18);
+  --grn: #2E9E68;
+  --grn-pale: rgba(46,158,104,0.12);
+  --red: #C43030;
+  --red-pale: rgba(196,48,48,0.1);
+  --amb: #E8A020;
+  --amb-pale: rgba(232,160,32,0.1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--obs);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 16px 52px;
+  gap: 20px;
+}
+
+/* ── HEADER META ── */
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 11.5px;
+  color: var(--mist);
+  letter-spacing: 0.06em;
+}
+.meta-row span { display: flex; align-items: center; gap: 5px; }
+.meta-divider { width: 1px; height: 12px; background: rgba(255,255,255,0.1); }
+
+/* ── CAROUSEL ── */
+.carousel-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 14px;
+  padding: 6px 4px 14px;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar { display: none; }
+
+/* ── CARD ── */
+.card {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 500px;
+  background: var(--obs2);
+  border-radius: 20px;
+  border: 1px solid var(--bd-gold);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 56px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 540px) {
+  .card { width: calc(100vw - 48px); }
+  .carousel-wrap { max-width: 100%; }
+}
+
+.gold-bar {
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--gold-lt) 50%, var(--gold) 75%, transparent 100%);
+  flex-shrink: 0;
+}
+
+/* ── CARD HEADER ── */
+.card-header {
+  background: linear-gradient(150deg, #1C1A10 0%, var(--obs) 100%);
+  padding: 18px 24px 14px;
+  border-bottom: 1px solid var(--bd-gold);
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header-left {}
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.brand-sub {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.4);
+}
+
+.header-right { text-align: right; flex-shrink: 0; }
+.send-date {
+  font-size: 11px;
+  color: var(--mist);
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+.read-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  color: rgba(201,168,76,0.5);
+  background: rgba(201,168,76,0.07);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 20px;
+  padding: 3px 9px;
+}
+
+/* Section tag */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 3px 10px 3px 8px;
+}
+.tag-action { color: var(--amb); background: var(--amb-pale); border: 1px solid rgba(232,160,32,0.28); }
+.tag-info   { color: var(--gold); background: rgba(201,168,76,0.09); border: 1px solid rgba(201,168,76,0.2); }
+.tag-social { color: #A89FE8; background: rgba(168,159,232,0.1); border: 1px solid rgba(168,159,232,0.22); }
+.tag-urgent { color: #E88080; background: var(--red-pale); border: 1px solid rgba(196,48,48,0.28); }
+.tag-dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+.card-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+.card-icon-title { display: flex; align-items: center; gap: 10px; }
+.card-icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--cream);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+/* ── CARD BODY ── */
+.card-body {
+  padding: 18px 24px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.body-text {
+  font-size: 14.5px;
+  line-height: 1.72;
+  color: var(--slate);
+}
+.body-text strong { color: var(--cream); font-weight: 500; }
+
+/* CTA strip */
+.cta-strip {
+  padding: 10px 14px;
+  background: rgba(201,168,76,0.06);
+  border-left: 2px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--gold-lt);
+  line-height: 1.55;
+}
+
+/* Detail box */
+.detail-box {
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--bd-gold);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--slate);
+}
+.detail-row strong { color: var(--cream); font-weight: 500; }
+.detail-icon { width: 18px; text-align: center; flex-shrink: 0; font-size: 14px; }
+
+/* RSVP */
+.rsvp-options { display: flex; flex-direction: column; gap: 8px; }
+.rsvp-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 11px 14px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.rsvp-row:hover { background: rgba(255,255,255,0.05); }
+.rsvp-row.selected-yes { border-color: rgba(46,158,104,0.5); background: var(--grn-pale); }
+.rsvp-row.selected-no  { border-color: rgba(196,48,48,0.4); background: var(--red-pale); }
+.rsvp-emoji { font-size: 18px; flex-shrink: 0; }
+.rsvp-label { font-size: 14px; font-weight: 500; color: var(--cream); flex: 1; }
+.rsvp-badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.badge-yes { background: rgba(46,158,104,0.15); border: 1px solid rgba(46,158,104,0.3); color: #6DD896; }
+.badge-no  { background: var(--red-pale); border: 1px solid rgba(196,48,48,0.3); color: #E89090; }
+
+/* ACK */
+.ack-box {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid var(--bd-gold);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ack-text {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.ack-text strong { color: var(--cream); }
+.ack-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--obs);
+  background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  align-self: flex-start;
+}
+.ack-btn:hover { opacity: 0.88; }
+.ack-btn.done { background: var(--grn-pale); color: var(--grn); border: 1px solid rgba(46,158,104,0.3); }
+.ack-deadline { font-size: 11px; color: var(--mist); margin-top: 2px; }
+
+/* names box */
+.names-box {
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--bd-gold);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+.names-list { font-size: 14.5px; color: var(--cream); font-weight: 500; line-height: 2; }
+.names-note { font-size: 12px; color: var(--mist); margin-top: 5px; }
+
+/* Quick actions strip (cover card) */
+.quick-actions {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--bd-gold);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.qa-header {
+  padding: 9px 14px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mist);
+  border-bottom: 1px solid var(--bd-gold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.qa-count {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--amb);
+  background: var(--amb-pale);
+  border: 1px solid rgba(232,160,32,0.28);
+  border-radius: 20px;
+  padding: 1px 8px;
+}
+.qa-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.qa-item:last-child { border-bottom: none; }
+.qa-item:hover { background: rgba(255,255,255,0.03); }
+.qa-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-action { background: var(--amb); }
+.dot-info   { background: var(--gold); opacity: 0.5; }
+.dot-social { background: #A89FE8; opacity: 0.7; }
+.qa-label { font-size: 13px; color: var(--slate); flex: 1; }
+.qa-label strong { color: var(--cream); font-weight: 500; }
+.qa-arrow { font-size: 11px; color: var(--mist); }
+
+/* Cover items (swipe hint area) */
+.cover-swipe-hint {
+  font-size: 12px;
+  color: var(--mist);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* ── CARD FOOTER ── */
+.card-footer {
+  padding: 0 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+.card-counter {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--mist);
+  letter-spacing: 0.06em;
+}
+.dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.2);
+  transition: background 0.2s, transform 0.2s, width 0.2s;
+  cursor: pointer;
+}
+.dot.active {
+  background: var(--gold);
+  transform: scale(1.2);
+  width: 18px;
+  border-radius: 4px;
+}
+
+/* ── NAV BUTTONS ── */
+.nav-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.nav-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--obs);
+  background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+  border: none;
+  border-radius: 30px;
+  padding: 9px 22px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  box-shadow: 0 3px 14px rgba(201,168,76,0.28);
+}
+.nav-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+.nav-btn:disabled { opacity: 0.25; cursor: default; transform: none; box-shadow: none; }
+.nav-btn.ghost {
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.5);
+  box-shadow: none;
+}
+.nav-btn.ghost:hover { background: rgba(201,168,76,0.09); }
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--obs3);
+  color: var(--cream);
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--bd-gold);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: all 0.25s;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 100;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* Animations */
+.card { animation: cardIn 0.4s ease both; }
+@keyframes cardIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+
+/* Intro card special treatment */
+.intro-body {
+  padding: 28px 26px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.intro-greeting {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+.intro-greeting em {
+  font-style: italic;
+  color: var(--gold);
+}
+.intro-text {
+  font-size: 15px;
+  line-height: 1.78;
+  color: rgba(250,247,242,0.6);
+}
+.intro-text strong { color: var(--cream); font-weight: 500; }
+.intro-sig {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(201,168,76,0.15);
+}
+.sig-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  color: rgba(201,168,76,0.4);
+  line-height: 1;
+}
+.sig-text { font-size: 12px; color: var(--mist); }
+.sig-name { font-size: 13px; font-weight: 500; color: var(--cream); margin-bottom: 1px; }
+
+/* Website banner */
+.website-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(46,158,104,0.12) 0%, rgba(46,158,104,0.05) 100%);
+  border: 1px solid rgba(46,158,104,0.3);
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.website-banner:hover { background: rgba(46,158,104,0.15); }
+.website-icon { font-size: 20px; flex-shrink: 0; }
+.website-text { flex: 1; }
+.website-title { font-size: 13.5px; font-weight: 600; color: #6DD896; margin-bottom: 2px; }
+.website-sub { font-size: 11.5px; color: var(--slate); }
+.website-badge {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #6DD896;
+  background: rgba(46,158,104,0.15);
+  border: 1px solid rgba(46,158,104,0.3);
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+/* Scheduling guideline rows */
+.guideline-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  align-items: flex-start;
+}
+.guideline-item + .guideline-item { margin-top: 0; }
+.guideline-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.22);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.guideline-text {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--slate);
+}
+.guideline-text strong { color: var(--cream); font-weight: 500; }
+
+/* Read acknowledgment */
+.read-ack-box {
+  background: linear-gradient(150deg, rgba(201,168,76,0.08) 0%, rgba(0,0,0,0.3) 100%);
+  border: 1px solid var(--bd-gold);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.read-ack-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--cream);
+}
+.read-ack-text {
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.65;
+}
+.read-ack-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.read-ack-input {
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--cream);
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--bd-gold);
+  border-radius: 10px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.read-ack-input::placeholder { color: var(--mist); }
+.read-ack-input:focus { border-color: rgba(201,168,76,0.5); }
+.read-ack-submit {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--obs);
+  background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+.read-ack-submit:hover { opacity: 0.88; }
+.read-ack-submit:disabled { opacity: 0.3; cursor: default; }
+.read-ack-submit.done {
+  background: var(--grn-pale);
+  color: var(--grn);
+  border: 1px solid rgba(46,158,104,0.3);
+}
+.read-ack-timestamp {
+  font-size: 11px;
+  color: var(--mist);
+  display: none;
+}
+.read-ack-timestamp.show { display: block; }
+
+/* Signed names list */
+.signed-list {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 4px;
+  border-top: 1px solid rgba(201,168,76,0.12);
+  padding-top: 12px;
+}
+.signed-list.show { display: flex; }
+.signed-list-header {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 8px;
+}
+.signed-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.signed-entry:last-child { border-bottom: none; }
+.signed-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.signed-check {
+  color: var(--grn);
+  font-size: 12px;
+}
+.signed-time {
+  font-size: 10.5px;
+  color: var(--mist);
+}
+</style>
+</head>
+<body>
+
+<div class="meta-row">
+  <span>&#128203; Teacher Announcement</span>
+  <div class="meta-divider"></div>
+  <span>June 2026</span>
+  <div class="meta-divider"></div>
+  <span>Harland Education</span>
+</div>
+
+<div class="carousel-wrap">
+  <div class="carousel" id="carousel">
+
+    <!-- ══ CARD 1: COVER ══ -->
+    <div class="card">
+      <div class="gold-bar"></div>
+      <div class="card-header">
+        <div class="header-left">
+          <div class="brand">Harland Education</div>
+          <div class="brand-sub">Teacher Announcement</div>
+        </div>
+        <div class="header-right">
+          <div class="read-time">&#9201; 5 cards &middot; ~2 min</div>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <!-- Website launch banner -->
+        <a class="website-banner" href="https://harland.com.tw/" target="_blank" rel="noopener">
+          <div class="website-icon">&#127760;</div>
+          <div class="website-text">
+            <div class="website-title">Harland website is live!</div>
+            <div class="website-sub">harland.com.tw &mdash; take a look</div>
+          </div>
+          <div class="website-badge">NEW</div>
+        </a>
+
+        <!-- Quick actions -->
+        <div class="quick-actions">
+          <div class="qa-header">
+            <span>This announcement</span>
+            <span class="qa-count">1 needs a response</span>
+          </div>
+          <div class="qa-item" onclick="goTo(2)">
+            <div class="qa-dot dot-action"></div>
+            <div class="qa-label"><strong>Scheduling</strong> &mdash; availability and class offers</div>
+            <div class="qa-arrow">&#8250;</div>
+          </div>
+          <div class="qa-item" onclick="goTo(1)">
+            <div class="qa-dot dot-info"></div>
+            <div class="qa-label"><strong>Message from Ms. M</strong></div>
+            <div class="qa-arrow">&#8250;</div>
+          </div>
+          <div class="qa-item" onclick="goTo(3)">
+            <div class="qa-dot dot-info"></div>
+            <div class="qa-label"><strong>Welcome</strong> &mdash; new students</div>
+            <div class="qa-arrow">&#8250;</div>
+          </div>
+          <div class="qa-item" onclick="goTo(4)">
+            <div class="qa-dot dot-action"></div>
+            <div class="qa-label"><strong>Read acknowledgment</strong> &mdash; please sign</div>
+            <div class="qa-arrow">&#8250;</div>
+          </div>
+        </div>
+
+        <div class="cover-swipe-hint">Swipe or use &#8592; &#8594; below</div>
+      </div>
+      <div class="card-footer">
+        <span class="card-counter">1 / 5</span>
+        <div class="dots" id="dots"></div>
+      </div>
+    </div>
+
+    <!-- ══ CARD 2: INTRO ══ -->
+    <div class="card">
+      <div class="gold-bar"></div>
+      <div class="card-header">
+        <div class="header-left">
+          <div class="brand">Harland Education</div>
+          <div class="brand-sub">Teacher Announcement</div>
+        </div>
+        <div class="header-right">
+        </div>
+      </div>
+      <div class="intro-body">
+        <div class="intro-greeting">
+          Happy<br><em>June,</em><br>Harland Team.
+        </div>
+        <div class="intro-text">
+          Summer is here, and with it comes a busy stretch for all of us. This month we have some important reminders around <strong>scheduling and availability</strong> that we need everyone to read carefully.<br><br>
+          We&rsquo;re also thrilled to share that the <strong>Harland website</strong> is officially up and running. Please take a moment to check it out at <strong>harland.com.tw</strong>.<br><br>
+          As always, thank you for everything you bring to our students and families.
+        </div>
+        <div class="intro-sig">
+          <div class="sig-mark">MY</div>
+          <div class="sig-text">
+            <div class="sig-name">Ms. M</div>
+            <div>Minley Yeh</div>
+            <div>Head Teacher</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-counter">2 / 5</span>
+        <div class="dots" id="dots2"></div>
+      </div>
+    </div>
+
+    <!-- ══ CARD 3: SCHEDULING & AVAILABILITY ══ -->
+    <div class="card">
+      <div class="gold-bar"></div>
+      <div class="card-header">
+        <div class="header-left">
+          <div class="brand">Harland Education</div>
+          <div class="brand-sub">Teacher Announcement</div>
+        </div>
+        <div class="header-right">
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <span class="section-tag tag-action"><span class="tag-dot"></span>Action needed</span>
+          <div class="card-title-row" style="margin-top:10px">
+            <div class="card-icon-title">
+              <span class="card-icon">&#128197;</span>
+              <div class="card-title">Scheduling &amp;<br>Availability</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="body-text" style="font-size:13.5px;">
+          A few friendly reminders to help scheduling run smoothly for everyone.
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="guideline-item">
+            <div class="guideline-num">1</div>
+            <div class="guideline-text"><strong>Keep your Teachworks availability up to date.</strong> This streamlines the scheduling process.</div>
+          </div>
+          <div class="guideline-item">
+            <div class="guideline-num">2</div>
+            <div class="guideline-text"><strong>When you're offered a class, a quick reply goes a long way.</strong> It helps us confirm things with families sooner.</div>
+          </div>
+          <div class="guideline-item">
+            <div class="guideline-num">3</div>
+            <div class="guideline-text"><strong>No penalty for declining a class.</strong> We work around your schedule. All we need is a prompt reply so we can plan accordingly.</div>
+          </div>
+          <div class="guideline-item">
+            <div class="guideline-num">4</div>
+            <div class="guideline-text"><strong>We may occasionally ask outside your listed hours.</strong> A quick reply either way helps us keep things moving.</div>
+          </div>
+          <div class="guideline-item">
+            <div class="guideline-num">5</div>
+            <div class="guideline-text"><strong>If a student asks to reschedule, please check with Admin first.</strong> We need to confirm on our end before anything is confirmed with the student.</div>
+          </div>
+        </div>
+
+        <div class="ack-box">
+          <div class="ack-text">
+            Thanks for reading. A quick tap below to let us know you've seen this.
+          </div>
+          <button class="ack-btn" id="ack-sched" onclick="ackBtn('ack-sched', 'Acknowledged')">
+            &#10003; &nbsp;Got it
+          </button>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-counter">3 / 5</span>
+        <div class="dots" id="dots3"></div>
+      </div>
+    </div>
+
+    <!-- ══ CARD 4: WELCOME ══ -->
+    <div class="card">
+      <div class="gold-bar"></div>
+      <div class="card-header">
+        <div class="header-left">
+          <div class="brand">Harland Education</div>
+          <div class="brand-sub">Teacher Announcement</div>
+        </div>
+        <div class="header-right">
+        </div>
+      </div>
+      <div class="card-body">
+
+        <div>
+          <span class="section-tag tag-info"><span class="tag-dot"></span>Welcome</span>
+          <div class="card-title-row" style="margin-top:10px">
+            <div class="card-icon-title">
+              <span class="card-icon">&#127793;</span>
+              <div class="card-title">New Faces<br>at Harland</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Students -->
+        <div style="font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);padding:4px 0 10px;">New Students</div>
+
+        <div style="background:var(--obs3);border:1px solid var(--bd-gold);border-radius:10px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:8px 14px;border-bottom:1px solid var(--bd-gold);">
+            <div style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)">Student</div>
+            <div style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)">Programme</div>
+            <div style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)">Teacher</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Andrew Hsu</div>
+            <div style="font-size:12px;color:var(--slate)">Academic English</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Hutten</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Cecelia Hsu</div>
+            <div style="font-size:12px;color:var(--slate)">SAT Test Prep</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Dalton</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Haemon Yang</div>
+            <div style="font-size:12px;color:var(--slate)">HAC Professional</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Glen</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Hank Yeh</div>
+            <div style="font-size:12px;color:var(--slate)">Academic English</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Dalton</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Howard Li</div>
+            <div style="font-size:12px;color:var(--slate)">Executive Coaching</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Teachey</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Kailin Chen</div>
+            <div style="font-size:12px;color:var(--slate)">Academic English</div>
+            <div style="font-size:12px;color:var(--slate)">Ms. M &amp; Mr. Arnold</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Phoenix Kuo</div>
+            <div style="font-size:12px;color:var(--slate)">SSAT Test Prep</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Dalton</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Phoenix Kuo</div>
+            <div style="font-size:12px;color:var(--slate)">TOEFL Test Prep</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Glen</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Yang Hsu</div>
+            <div style="font-size:12px;color:var(--slate)">AMC10</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Hutten</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer">
+        <span class="card-counter">4 / 5</span>
+        <div class="dots" id="dots4"></div>
+      </div>
+    </div>
+
+    <!-- ══ CARD 5: THANK YOU + READ ACKNOWLEDGMENT ══ -->
+    <div class="card">
+      <div class="gold-bar"></div>
+      <div class="card-header">
+        <div class="header-left">
+          <div class="brand">Harland Education</div>
+          <div class="brand-sub">Teacher Announcement</div>
+        </div>
+        <div class="header-right">
+        </div>
+      </div>
+      <div class="intro-body">
+        <div class="intro-greeting">
+          Thank<br>you. <em>All<br>of you.</em>
+        </div>
+        <div class="intro-text">
+          We are almost at the finish line for Q2, and we want to take a moment to say thank you. The schedule changes, the new additions, the occasional curveball. You have handled all of it with patience, professionalism, and a genuine willingness to make things work.<br><br>
+          That kind of spirit is not easy to find, and it is exactly what sets this team apart. Harland is what it is because of the people in it, and that means you.<br><br>
+          Keep up the incredible work, and enjoy the summer ahead!
+        </div>
+
+        <!-- Read Acknowledgment -->
+        <div class="read-ack-box">
+          <div class="read-ack-title">&#9997; Read Acknowledgment</div>
+          <div class="read-ack-text">
+            Please type your full name below to confirm you have read this announcement.
+          </div>
+          <div class="read-ack-input-row">
+            <input type="text" class="read-ack-input" id="ack-name-input" placeholder="Your full name" autocomplete="off">
+            <button class="read-ack-submit" id="ack-name-btn" onclick="submitReadAck()">Sign</button>
+          </div>
+          <div class="read-ack-timestamp" id="ack-timestamp"></div>
+          <div class="signed-list" id="signed-list">
+            <div class="signed-list-header">Signed by</div>
+            <div id="signed-entries"></div>
+          </div>
+        </div>
+
+        <div class="intro-sig">
+          <div class="sig-mark">MY</div>
+          <div class="sig-text">
+            <div class="sig-name">Ms. M</div>
+            <div>Minley Yeh</div>
+            <div>Head Teacher</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-counter">5 / 5</span>
+        <div class="dots" id="dots5"></div>
+      </div>
+    </div>
+
+  </div><!-- end carousel -->
+</div><!-- close carousel-wrap -->
+
+<!-- NAV BUTTONS -->
+<div class="nav-row">
+  <button class="nav-btn ghost" id="btn-prev" onclick="nav(-1)" disabled>&larr; Prev</button>
+  <button class="nav-btn" id="btn-next" onclick="nav(1)">Next &rarr;</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const carousel = document.getElementById('carousel');
+const cards = carousel.querySelectorAll('.card');
+const total = cards.length;
+let cur = 0;
+
+// Build dots in ALL dot containers
+function buildDots() {
+  ['dots','dots2','dots3','dots4','dots5'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('div');
+      d.className = 'dot' + (i === cur ? ' active' : '');
+      d.onclick = () => goTo(i);
+      el.appendChild(d);
+    }
+  });
+}
+
+function goTo(n) {
+  cur = Math.max(0, Math.min(n, total - 1));
+  cards[cur].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  buildDots();
+  document.getElementById('btn-prev').disabled = cur === 0;
+  document.getElementById('btn-next').disabled = cur === total - 1;
+  document.getElementById('btn-next').textContent = cur === total - 1 ? 'Done \u2713' : 'Next \u2192';
+}
+
+function nav(dir) { goTo(cur + dir); }
+
+// Sync dots on scroll
+carousel.addEventListener('scroll', () => {
+  const idx = Math.round(carousel.scrollLeft / (carousel.scrollWidth / total));
+  if (idx !== cur) { cur = idx; buildDots(); }
+  document.getElementById('btn-prev').disabled = cur === 0;
+  document.getElementById('btn-next').disabled = cur === total - 1;
+});
+
+// Toast
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._tid);
+  t._tid = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+// ACK button
+function ackBtn(id, msg) {
+  const btn = document.getElementById(id);
+  btn.textContent = '\u2713  ' + msg;
+  btn.classList.add('done');
+  btn.disabled = true;
+  showToast(msg);
+}
+
+// RSVP
+function rsvp(group, choice, el) {
+  const wrap = document.getElementById('rsvp-' + group);
+  wrap.querySelectorAll('.rsvp-row').forEach(r => {
+    r.classList.remove('selected-yes', 'selected-no');
+  });
+  el.classList.add(choice === 'yes' ? 'selected-yes' : 'selected-no');
+  showToast(choice === 'yes' ? 'RSVP: attending \u2713 \u2014 reply YES in LINE group' : 'RSVP: not attending \u2014 reply NO in LINE group');
+}
+
+// Read Acknowledgment
+const STORAGE_KEY = 'harland-june-2026-signatures';
+
+function getSignatures() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  } catch { return []; }
+}
+
+function saveSignatures(sigs) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(sigs));
+}
+
+function renderSignatures() {
+  const sigs = getSignatures();
+  const list = document.getElementById('signed-list');
+  const entries = document.getElementById('signed-entries');
+  if (!sigs.length) { list.classList.remove('show'); return; }
+
+  list.classList.add('show');
+  entries.innerHTML = sigs.map(s =>
+    '<div class="signed-entry">' +
+      '<div class="signed-name"><span class="signed-check">\u2713</span>' + s.name + '</div>' +
+      '<div class="signed-time">' + s.time + '</div>' +
+    '</div>'
+  ).join('');
+}
+
+function submitReadAck() {
+  const input = document.getElementById('ack-name-input');
+  const btn = document.getElementById('ack-name-btn');
+  const ts = document.getElementById('ack-timestamp');
+  const name = input.value.trim();
+
+  if (!name) {
+    showToast('Please enter your name');
+    input.focus();
+    return;
+  }
+
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+
+  // Save to list
+  const sigs = getSignatures();
+  sigs.push({ name: name, time: dateStr + ', ' + timeStr });
+  saveSignatures(sigs);
+
+  // Reset input for next person
+  input.value = '';
+  ts.textContent = 'Last signed by ' + name + ' on ' + dateStr + ' at ' + timeStr;
+  ts.classList.add('show');
+
+  renderSignatures();
+  showToast('Thank you, ' + name + '!');
+}
+
+// Load existing signatures on page load
+renderSignatures();
+
+// Init
+buildDots();
+</script>
+</body>
+</html>
