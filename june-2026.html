@@ -3,34 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harland Education — Teacher Announcement | June 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Harland HQ · Team Announcement · June 2026 · v3</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;700&family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --gold: #C9A84C;
-  --gold-lt: #E8C97A;
-  --gold-pale: #F5EDDA;
-  --obs: #0D0D0F;
-  --obs2: #161618;
-  --obs3: #1E1E21;
-  --cream: #FAF7F2;
-  --slate: rgba(250,247,242,0.55);
-  --mist: rgba(250,247,242,0.28);
-  --bd: rgba(255,255,255,0.07);
-  --bd-gold: rgba(201,168,76,0.18);
-  --grn: #2E9E68;
-  --grn-pale: rgba(46,158,104,0.12);
-  --red: #C43030;
-  --red-pale: rgba(196,48,48,0.1);
-  --amb: #E8A020;
-  --amb-pale: rgba(232,160,32,0.1);
+  --gold: #C9A84C;          /* fills, hairlines, accents */
+  --gold-lt: #E8C97A;       /* soft accents, hover */
+  --gold-pale: #F5EDDA;     /* tinted panels */
+  --gold-dark: #A07820;     /* gold TEXT/links on cream */
+  --ground: #F8F5EF;        /* page ground (cream) */
+  --obs: #0D0D0F;           /* obsidian: text on gold fills, dark accents */
+  --obs2: #FFFEF9;          /* card surface */
+  --obs3: #FAF7F0;          /* inner panels / warm band */
+  --cream: #1A1A1F;         /* INK: primary text + headings */
+  --slate: #4A4A56;         /* secondary text */
+  --mist: #9A9AA8;          /* tertiary / faint labels */
+  --bd: #E8E4DC;            /* hairline borders on light */
+  --bd-gold: rgba(160,120,32,0.30);
+  --grn: #3B6D11;
+  --grn-pale: #EAF3DE;
+  --red: #A32D2D;
+  --red-pale: #FCEBEB;
+  --amb: #854F0B;
+  --amb-pale: #FAEEDA;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: var(--obs);
-  font-family: 'DM Sans', sans-serif;
+  background: var(--ground);
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -49,7 +51,7 @@ body {
   letter-spacing: 0.06em;
 }
 .meta-row span { display: flex; align-items: center; gap: 5px; }
-.meta-divider { width: 1px; height: 12px; background: rgba(255,255,255,0.1); }
+.meta-divider { width: 1px; height: 12px; background: rgba(0,0,0,0.1); }
 
 /* ── CAROUSEL ── */
 .carousel-wrap {
@@ -80,7 +82,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 16px 56px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.4);
+  box-shadow: 0 1px 3px rgba(13,13,15,0.06);
 }
 
 @media (max-width: 540px) {
@@ -96,7 +98,7 @@ body {
 
 /* ── CARD HEADER ── */
 .card-header {
-  background: linear-gradient(150deg, #1C1A10 0%, var(--obs) 100%);
+  background: var(--obs3);
   padding: 18px 24px 14px;
   border-bottom: 1px solid var(--bd-gold);
   flex-shrink: 0;
@@ -108,11 +110,11 @@ body {
 
 .header-left {}
 .brand {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--gold);
-  letter-spacing: 0.04em;
+  font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--gold-dark);
+  letter-spacing: 0.01em;
   line-height: 1;
   margin-bottom: 3px;
 }
@@ -121,7 +123,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(201,168,76,0.4);
+  color: var(--gold-dark);
 }
 
 .header-right { text-align: right; flex-shrink: 0; }
@@ -136,7 +138,7 @@ body {
   align-items: center;
   gap: 4px;
   font-size: 10.5px;
-  color: rgba(201,168,76,0.5);
+  color: var(--gold-dark);
   background: rgba(201,168,76,0.07);
   border: 1px solid rgba(201,168,76,0.15);
   border-radius: 20px;
@@ -148,17 +150,17 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   border-radius: 20px;
   padding: 3px 10px 3px 8px;
 }
 .tag-action { color: var(--amb); background: var(--amb-pale); border: 1px solid rgba(232,160,32,0.28); }
-.tag-info   { color: var(--gold); background: rgba(201,168,76,0.09); border: 1px solid rgba(201,168,76,0.2); }
-.tag-social { color: #A89FE8; background: rgba(168,159,232,0.1); border: 1px solid rgba(168,159,232,0.22); }
-.tag-urgent { color: #E88080; background: var(--red-pale); border: 1px solid rgba(196,48,48,0.28); }
+.tag-info   { color: var(--gold-dark); background: rgba(201,168,76,0.09); border: 1px solid rgba(201,168,76,0.2); }
+.tag-social { color: var(--gold-dark); background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.22); }
+.tag-urgent { color: var(--red); background: var(--red-pale); border: 1px solid rgba(196,48,48,0.28); }
 .tag-dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
 
 .card-title-row {
@@ -171,11 +173,11 @@ body {
 .card-icon-title { display: flex; align-items: center; gap: 10px; }
 .card-icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
 .card-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
-  font-weight: 600;
+  font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  font-size: 22px;
+  font-weight: 400;
   color: var(--cream);
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
@@ -203,7 +205,7 @@ body {
   border-radius: 0 6px 6px 0;
   font-size: 13.5px;
   font-weight: 500;
-  color: var(--gold-lt);
+  color: var(--gold-dark);
   line-height: 1.55;
 }
 
@@ -233,14 +235,14 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(255,255,255,0.03);
+  background: rgba(0,0,0,0.03);
   border: 1px solid var(--bd);
   border-radius: 10px;
   padding: 11px 14px;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
 }
-.rsvp-row:hover { background: rgba(255,255,255,0.05); }
+.rsvp-row:hover { background: rgba(0,0,0,0.05); }
 .rsvp-row.selected-yes { border-color: rgba(46,158,104,0.5); background: var(--grn-pale); }
 .rsvp-row.selected-no  { border-color: rgba(196,48,48,0.4); background: var(--red-pale); }
 .rsvp-emoji { font-size: 18px; flex-shrink: 0; }
@@ -252,12 +254,12 @@ body {
   border-radius: 20px;
   white-space: nowrap;
 }
-.badge-yes { background: rgba(46,158,104,0.15); border: 1px solid rgba(46,158,104,0.3); color: #6DD896; }
-.badge-no  { background: var(--red-pale); border: 1px solid rgba(196,48,48,0.3); color: #E89090; }
+.badge-yes { background: rgba(46,158,104,0.15); border: 1px solid rgba(46,158,104,0.3); color: var(--grn); }
+.badge-no  { background: var(--red-pale); border: 1px solid rgba(196,48,48,0.3); color: var(--red); }
 
 /* ACK */
 .ack-box {
-  background: rgba(0,0,0,0.25);
+  background: rgba(0,0,0,0.03);
   border: 1px solid var(--bd-gold);
   border-radius: 10px;
   padding: 14px 16px;
@@ -275,7 +277,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
   font-size: 13px;
   font-weight: 600;
   color: var(--obs);
@@ -303,7 +305,7 @@ body {
 
 /* Quick actions strip (cover card) */
 .quick-actions {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.03);
   border: 1px solid var(--bd-gold);
   border-radius: 10px;
   overflow: hidden;
@@ -334,16 +336,16 @@ body {
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
   cursor: pointer;
   transition: background 0.15s;
 }
 .qa-item:last-child { border-bottom: none; }
-.qa-item:hover { background: rgba(255,255,255,0.03); }
+.qa-item:hover { background: rgba(0,0,0,0.03); }
 .qa-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 .dot-action { background: var(--amb); }
 .dot-info   { background: var(--gold); opacity: 0.5; }
-.dot-social { background: #A89FE8; opacity: 0.7; }
+.dot-social { background: var(--gold-dark); opacity: 0.7; }
 .qa-label { font-size: 13px; color: var(--slate); flex: 1; }
 .qa-label strong { color: var(--cream); font-weight: 500; }
 .qa-arrow { font-size: 11px; color: var(--mist); }
@@ -366,7 +368,7 @@ body {
   margin-top: auto;
 }
 .card-counter {
-  font-family: 'DM Mono', monospace;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
   font-size: 10.5px;
   color: var(--mist);
   letter-spacing: 0.06em;
@@ -397,7 +399,7 @@ body {
   align-items: center;
 }
 .nav-btn {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
   font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -408,12 +410,12 @@ body {
   padding: 9px 22px;
   cursor: pointer;
   transition: opacity 0.15s, transform 0.1s;
-  box-shadow: 0 3px 14px rgba(201,168,76,0.28);
+  box-shadow: none;
 }
 .nav-btn:hover { opacity: 0.85; transform: translateY(-1px); }
 .nav-btn:disabled { opacity: 0.25; cursor: default; transform: none; box-shadow: none; }
 .nav-btn.ghost {
-  color: var(--gold);
+  color: var(--gold-dark);
   background: transparent;
   border: 1px solid rgba(201,168,76,0.5);
   box-shadow: none;
@@ -432,7 +434,7 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   border: 1px solid var(--bd-gold);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 16px rgba(13,13,15,0.12);
   opacity: 0;
   transition: all 0.25s;
   pointer-events: none;
@@ -454,21 +456,21 @@ body {
   gap: 18px;
 }
 .intro-greeting {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
-  font-weight: 500;
+  font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  font-size: 33px;
+  font-weight: 400;
   color: var(--cream);
-  line-height: 1.15;
-  letter-spacing: 0.01em;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
 }
 .intro-greeting em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--gold-dark);
 }
 .intro-text {
   font-size: 15px;
   line-height: 1.78;
-  color: rgba(250,247,242,0.6);
+  color: var(--slate);
 }
 .intro-text strong { color: var(--cream); font-weight: 500; }
 .intro-sig {
@@ -480,9 +482,9 @@ body {
   border-top: 1px solid rgba(201,168,76,0.15);
 }
 .sig-mark {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
   font-size: 26px;
-  color: rgba(201,168,76,0.4);
+  color: var(--gold-dark);
   line-height: 1;
 }
 .sig-text { font-size: 12px; color: var(--mist); }
@@ -493,7 +495,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: linear-gradient(135deg, rgba(46,158,104,0.12) 0%, rgba(46,158,104,0.05) 100%);
+  background: var(--grn-pale);
   border: 1px solid rgba(46,158,104,0.3);
   border-radius: 10px;
   padding: 12px 14px;
@@ -504,12 +506,12 @@ body {
 .website-banner:hover { background: rgba(46,158,104,0.15); }
 .website-icon { font-size: 20px; flex-shrink: 0; }
 .website-text { flex: 1; }
-.website-title { font-size: 13.5px; font-weight: 600; color: #6DD896; margin-bottom: 2px; }
+.website-title { font-size: 13.5px; font-weight: 600; color: var(--grn); margin-bottom: 2px; }
 .website-sub { font-size: 11.5px; color: var(--slate); }
 .website-badge {
   font-size: 10.5px;
   font-weight: 600;
-  color: #6DD896;
+  color: var(--grn);
   background: rgba(46,158,104,0.15);
   border: 1px solid rgba(46,158,104,0.3);
   border-radius: 20px;
@@ -522,17 +524,17 @@ body {
   display: flex;
   gap: 12px;
   padding: 12px 14px;
-  background: rgba(255,255,255,0.02);
+  background: rgba(0,0,0,0.02);
   border: 1px solid var(--bd);
   border-radius: 10px;
   align-items: flex-start;
 }
 .guideline-item + .guideline-item { margin-top: 0; }
 .guideline-num {
-  font-family: 'DM Mono', monospace;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
   font-size: 11px;
   font-weight: 600;
-  color: var(--gold);
+  color: var(--gold-dark);
   background: rgba(201,168,76,0.1);
   border: 1px solid rgba(201,168,76,0.22);
   border-radius: 50%;
@@ -553,7 +555,7 @@ body {
 
 /* Read acknowledgment */
 .read-ack-box {
-  background: linear-gradient(150deg, rgba(201,168,76,0.08) 0%, rgba(0,0,0,0.3) 100%);
+  background: var(--gold-pale);
   border: 1px solid var(--bd-gold);
   border-radius: 12px;
   padding: 20px;
@@ -562,9 +564,10 @@ body {
   gap: 14px;
 }
 .read-ack-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  font-weight: 600;
+  font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   color: var(--cream);
 }
 .read-ack-text {
@@ -579,10 +582,10 @@ body {
 }
 .read-ack-input {
   flex: 1;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
   font-size: 14px;
   color: var(--cream);
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.03);
   border: 1px solid var(--bd-gold);
   border-radius: 10px;
   padding: 10px 14px;
@@ -590,9 +593,9 @@ body {
   transition: border-color 0.2s;
 }
 .read-ack-input::placeholder { color: var(--mist); }
-.read-ack-input:focus { border-color: rgba(201,168,76,0.5); }
+.read-ack-input:focus { border-color: var(--gold-dark); }
 .read-ack-submit {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
   font-size: 13px;
   font-weight: 600;
   color: var(--obs);
@@ -641,7 +644,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 7px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 .signed-entry:last-child { border-bottom: none; }
 .signed-name {
@@ -660,12 +663,245 @@ body {
   font-size: 10.5px;
   color: var(--mist);
 }
+
+/* ===== v3 ADDITIONS ===================================== */
+
+/* Action summary (TL;DR): the single most important thing, front-loaded on cover */
+.action-summary {
+  background: linear-gradient(135deg, rgba(201,168,76,0.16) 0%, rgba(201,168,76,0.05) 100%);
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.as-label {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold-dark);
+  display: flex; align-items: center; gap: 6px;
+}
+.as-pulse {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+  animation: pdot 2s ease-in-out infinite;
+}
+.as-row {
+  display: flex; align-items: flex-start; gap: 11px;
+  cursor: pointer; padding: 9px 11px;
+  background: rgba(0,0,0,0.22); border: 1px solid var(--bd-gold);
+  border-radius: 9px; transition: background 0.15s, border-color 0.15s;
+}
+.as-row:hover { background: rgba(0,0,0,0.32); border-color: var(--gold-dark); }
+.as-check {
+  width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0;
+  background: rgba(201,168,76,0.12); border: 1px solid var(--bd-gold);
+  color: var(--gold-dark); font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+}
+.as-body { flex: 1; }
+.as-task { font-size: 14px; font-weight: 500; color: var(--cream); line-height: 1.4; }
+.as-due { font-size: 11.5px; color: var(--gold-dark); margin-top: 3px; letter-spacing: 0.02em; }
+.as-due strong { color: var(--gold-dark); font-weight: 600; }
+.as-arrow { font-size: 13px; color: var(--mist); align-self: center; }
+.as-none { font-size: 13px; color: var(--slate); line-height: 1.55; }
+
+/* Commitment control (replaces passive "Got it" on the action card) */
+.commit-box {
+  background: var(--gold-pale);
+  border: 1px solid var(--bd-gold);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.commit-title { font-size: 13px; color: var(--slate); line-height: 1.6; }
+.commit-title strong { color: var(--cream); font-weight: 500; }
+.commit-btn {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif; font-size: 14px; font-weight: 500;
+  color: var(--cream); text-align: left;
+  background: rgba(0,0,0,0.03); border: 1px solid var(--bd-gold);
+  border-radius: 10px; padding: 13px 15px; cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  width: 100%;
+}
+.commit-btn:hover { background: rgba(201,168,76,0.08); border-color: var(--gold-dark); }
+.commit-btn:active { transform: scale(0.99); }
+.commit-btn .cb-box {
+  width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0;
+  border: 1.5px solid rgba(201,168,76,0.5);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; color: transparent; transition: all 0.18s;
+}
+.commit-btn.committed {
+  background: var(--grn-pale); border-color: rgba(58,140,110,0.5); color: var(--cream);
+  cursor: default;
+}
+.commit-btn.committed .cb-box {
+  background: var(--grn); border-color: var(--grn); color: #fff;
+}
+
+/* Confirm counter / social proof */
+.confirm-strip {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 14px;
+  background: rgba(58,140,110,0.1);
+  border: 1px solid rgba(58,140,110,0.28);
+  border-radius: 10px;
+}
+.confirm-bar-wrap { flex: 1; }
+.confirm-bar-track {
+  height: 6px; background: rgba(0,0,0,0.08); border-radius: 3px; overflow: hidden;
+}
+.confirm-bar-fill {
+  height: 100%; background: var(--gold);
+  border-radius: 3px; width: 0%; transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.confirm-count {
+  font-size: 12px; color: var(--grn); font-weight: 500; white-space: nowrap;
+}
+.confirm-label { font-size: 11px; color: var(--slate); margin-top: 5px; }
+
+/* Pulse reaction (two-way: how clear was this update?) */
+.pulse-box {
+  background: rgba(0,0,0,0.03);
+  border: 1px solid var(--bd-gold);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.pulse-q { font-size: 13.5px; color: var(--cream); font-weight: 500; }
+.pulse-opts { display: flex; gap: 8px; }
+.pulse-opt {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 11px 6px; background: rgba(0,0,0,0.03);
+  border: 1px solid var(--bd); border-radius: 10px; cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+.pulse-opt:hover { background: rgba(0,0,0,0.06); border-color: var(--bd-gold); }
+.pulse-opt:active { transform: scale(0.97); }
+.pulse-opt.chosen { background: rgba(201,168,76,0.12); border-color: var(--gold-dark); }
+.pulse-face { font-size: 20px; line-height: 1; }
+.pulse-txt { font-size: 10.5px; color: var(--slate); }
+.pulse-opt.chosen .pulse-txt { color: var(--gold-dark); }
+.pulse-thanks { font-size: 12px; color: var(--grn); display: none; }
+.pulse-thanks.show { display: block; }
+
+/* View-mode toggle: swipe vs scroll (mobile-friendly fallback) */
+.view-toggle {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 11px; color: var(--mist); letter-spacing: 0.04em;
+}
+.vt-btn {
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif; font-size: 11px; color: var(--slate);
+  background: rgba(0,0,0,0.04); border: 1px solid var(--bd);
+  border-radius: 14px; padding: 4px 11px; cursor: pointer; transition: all 0.15s;
+}
+.vt-btn.active { background: rgba(201,168,76,0.12); border-color: var(--bd-gold); color: var(--gold-dark); }
+
+/* Stacked (scroll) layout: cards stack vertically, no horizontal snap */
+.carousel.stacked {
+  flex-direction: column;
+  overflow-x: visible;
+  overflow-y: visible;
+  scroll-snap-type: none;
+}
+.carousel.stacked .card {
+  width: 100% !important;
+  flex-shrink: 1;
+}
+.carousel.stacked .card-footer .dots { display: none; }
+
+:root { --hl-logo: url("data:image/png;base64,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"); }
+/* ── MASTHEAD LOGO (harland-logo: horizontal gold on obsidian) ── */
+.masthead { display: flex; justify-content: center; padding: 2px 0 12px;
+  print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.masthead-logo { width: 112px; height: 44px;
+  background: var(--hl-logo) center / contain no-repeat; }
+/* ── New Team Members (expandable rows) ── */
+.teacher-row { cursor: pointer; transition: background 0.15s; }
+.teacher-row:hover { background: rgba(0,0,0,0.04); }
+.teacher-row-header {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 0.8fr;
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  align-items: center;
+  gap: 8px;
+}
+.t-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.t-chevron { font-size: 10px; color: var(--mist); transition: transform 0.2s; flex-shrink: 0; }
+.t-chevron.open { transform: rotate(180deg); color: var(--gold-dark); }
+.t-sub { font-size: 12px; color: var(--slate); }
+.t-short { font-size: 12px; color: var(--slate); }
+.t-bio {
+  display: none;
+  padding: 10px 14px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: rgba(0,0,0,0.03);
+}
+.t-bio.open { display: block; }
+.t-bio-text { font-size: 12.5px; color: var(--slate); line-height: 1.72; }
+.t-programs { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+.t-prog-pill {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--gold-dark);
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.22);
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+.read-ack-input:disabled { opacity: 0.45; cursor: not-allowed; }
+.read-ack-gate {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--amb);
+  background: var(--amb-pale);
+  border: 1px solid rgba(232,160,32,0.28);
+  border-radius: 8px;
+  padding: 8px 11px;
+  margin-bottom: 2px;
+}
+/* Per-point checkboxes (Class Prep & Room Care) */
+.guideline-item.checkable { cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+.guideline-item.checkable:hover { border-color: var(--bd-gold); }
+.guideline-item.checked { border-color: var(--gold-dark); background: rgba(201,168,76,0.06); }
+.gl-check {
+  width: 22px; height: 22px; flex-shrink: 0; align-self: center;
+  border-radius: 6px;
+  border: 1.5px solid rgba(201,168,76,0.5);
+  background: rgba(0,0,0,0.03);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; line-height: 1; color: transparent;
+  transition: all 0.18s;
+}
+.guideline-item.checked .gl-check { background: var(--gold); border-color: var(--gold-dark); color: var(--obs); }
+.commit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.commit-btn:disabled:hover { background: rgba(0,0,0,0.03); border-color: var(--bd-gold); }
+.commit-gate {
+  font-size: 11.5px; line-height: 1.5;
+  color: var(--amb);
+  background: var(--amb-pale);
+  border: 1px solid rgba(232,160,32,0.28);
+  border-radius: 8px;
+  padding: 8px 11px;
+}
+
 </style>
 </head>
 <body>
 
+<div class="masthead"><div class="masthead-logo" role="img" aria-label="Harland Education"></div></div>
+
 <div class="meta-row">
-  <span>&#128203; Teacher Announcement</span>
+  <span>&#128203; Team Announcement</span>
   <div class="meta-divider"></div>
   <span>June 2026</span>
   <div class="meta-divider"></div>
@@ -681,20 +917,33 @@ body {
       <div class="card-header">
         <div class="header-left">
           <div class="brand">Harland Education</div>
-          <div class="brand-sub">Teacher Announcement</div>
+          <div class="brand-sub">Team Announcement</div>
         </div>
         <div class="header-right">
-          <div class="read-time">&#9201; 5 cards &middot; ~2 min</div>
+          <div class="read-time">&#9201; 6 cards &middot; ~3 min read</div>
         </div>
       </div>
       <div class="card-body">
+
+        <!-- v3: Front-loaded action summary (inverted pyramid, the one thing that matters, first) -->
+        <div class="action-summary">
+          <div class="as-label"><span class="as-pulse"></span>What you need to do</div>
+          <div class="as-row" onclick="goTo(2)">
+            <div class="as-check">&#10003;</div>
+            <div class="as-body">
+              <div class="as-task">Keep your Teachworks availability current, and reply promptly to class offers.</div>
+              <div class="as-due">By <strong>Thursday 18 June</strong> &middot; tap to see the details</div>
+            </div>
+            <div class="as-arrow">&#8250;</div>
+          </div>
+        </div>
 
         <!-- Website launch banner -->
         <a class="website-banner" href="https://harland.com.tw/" target="_blank" rel="noopener">
           <div class="website-icon">&#127760;</div>
           <div class="website-text">
             <div class="website-title">Harland website is live!</div>
-            <div class="website-sub">harland.com.tw &mdash; take a look</div>
+            <div class="website-sub">harland.com.tw · take a look</div>
           </div>
           <div class="website-badge">NEW</div>
         </a>
@@ -703,11 +952,16 @@ body {
         <div class="quick-actions">
           <div class="qa-header">
             <span>This announcement</span>
-            <span class="qa-count">1 needs a response</span>
+            <span class="qa-count">3 need a response</span>
           </div>
           <div class="qa-item" onclick="goTo(2)">
             <div class="qa-dot dot-action"></div>
-            <div class="qa-label"><strong>Scheduling</strong> &mdash; availability and class offers</div>
+            <div class="qa-label"><strong>Scheduling</strong> · availability and class offers</div>
+            <div class="qa-arrow">&#8250;</div>
+          </div>
+          <div class="qa-item" onclick="goTo(3)">
+            <div class="qa-dot dot-action"></div>
+            <div class="qa-label"><strong>Class Prep &amp; Room Care</strong> · shared spaces</div>
             <div class="qa-arrow">&#8250;</div>
           </div>
           <div class="qa-item" onclick="goTo(1)">
@@ -715,22 +969,28 @@ body {
             <div class="qa-label"><strong>Message from Ms. M</strong></div>
             <div class="qa-arrow">&#8250;</div>
           </div>
-          <div class="qa-item" onclick="goTo(3)">
+          <div class="qa-item" onclick="goTo(4)">
             <div class="qa-dot dot-info"></div>
-            <div class="qa-label"><strong>Welcome</strong> &mdash; new students</div>
+            <div class="qa-label"><strong>Welcome</strong> · new faces</div>
             <div class="qa-arrow">&#8250;</div>
           </div>
-          <div class="qa-item" onclick="goTo(4)">
+          <div class="qa-item" onclick="goTo(5)">
             <div class="qa-dot dot-action"></div>
-            <div class="qa-label"><strong>Read acknowledgment</strong> &mdash; please sign</div>
+            <div class="qa-label"><strong>Read acknowledgment</strong> · please sign</div>
             <div class="qa-arrow">&#8250;</div>
           </div>
         </div>
 
-        <div class="cover-swipe-hint">Swipe or use &#8592; &#8594; below</div>
+        <div class="cover-swipe-hint" style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+          <span>Swipe, or</span>
+          <span class="view-toggle">
+            <button class="vt-btn active" id="vt-swipe" onclick="setView('swipe')">Swipe</button>
+            <button class="vt-btn" id="vt-scroll" onclick="setView('scroll')">Scroll all</button>
+          </span>
+        </div>
       </div>
       <div class="card-footer">
-        <span class="card-counter">1 / 5</span>
+        <span class="card-counter">1 / 6</span>
         <div class="dots" id="dots"></div>
       </div>
     </div>
@@ -741,7 +1001,7 @@ body {
       <div class="card-header">
         <div class="header-left">
           <div class="brand">Harland Education</div>
-          <div class="brand-sub">Teacher Announcement</div>
+          <div class="brand-sub">Team Announcement</div>
         </div>
         <div class="header-right">
         </div>
@@ -751,9 +1011,9 @@ body {
           Happy<br><em>June,</em><br>Harland Team.
         </div>
         <div class="intro-text">
-          Summer is here, and with it comes a busy stretch for all of us. This month we have some important reminders around <strong>scheduling and availability</strong> that we need everyone to read carefully.<br><br>
-          We&rsquo;re also thrilled to share that the <strong>Harland website</strong> is officially up and running. Please take a moment to check it out at <strong>harland.com.tw</strong>.<br><br>
-          As always, thank you for everything you bring to our students and families.
+          Summer term is underway, and it is shaping up to be a busy one for all of us. This month we have a few important reminders around <strong>scheduling and availability</strong> that we need everyone to read carefully.<br><br>
+          We are also excited to share that the <strong>Harland website</strong> is now live. When you have a moment, take a look at <strong>harland.com.tw</strong>.<br><br>
+          Thank you, as always, for the care and commitment you bring to our students and families.
         </div>
         <div class="intro-sig">
           <div class="sig-mark">MY</div>
@@ -765,7 +1025,7 @@ body {
         </div>
       </div>
       <div class="card-footer">
-        <span class="card-counter">2 / 5</span>
+        <span class="card-counter">2 / 6</span>
         <div class="dots" id="dots2"></div>
       </div>
     </div>
@@ -776,7 +1036,7 @@ body {
       <div class="card-header">
         <div class="header-left">
           <div class="brand">Harland Education</div>
-          <div class="brand-sub">Teacher Announcement</div>
+          <div class="brand-sub">Team Announcement</div>
         </div>
         <div class="header-right">
         </div>
@@ -793,54 +1053,159 @@ body {
         </div>
 
         <div class="body-text" style="font-size:13.5px;">
-          A few friendly reminders to help scheduling run smoothly for everyone.
+          Scheduling is one of the most complex parts of our operation, and your cooperation on the points below makes a real difference. Please review and keep these in mind going forward.
         </div>
 
         <div style="display:flex;flex-direction:column;gap:8px;">
           <div class="guideline-item">
             <div class="guideline-num">1</div>
-            <div class="guideline-text"><strong>Keep your Teachworks availability up to date.</strong> This streamlines the scheduling process.</div>
+            <div class="guideline-text"><strong>Keep your Teachworks availability up to date.</strong> Accurate availability is the foundation of the entire scheduling process.</div>
           </div>
           <div class="guideline-item">
             <div class="guideline-num">2</div>
-            <div class="guideline-text"><strong>When you're offered a class, a quick reply goes a long way.</strong> It helps us confirm things with families sooner.</div>
+            <div class="guideline-text"><strong>When you are offered a class, please reply promptly.</strong> Early confirmation allows us to finalize arrangements with families sooner.</div>
           </div>
           <div class="guideline-item">
             <div class="guideline-num">3</div>
-            <div class="guideline-text"><strong>No penalty for declining a class.</strong> We work around your schedule. All we need is a prompt reply so we can plan accordingly.</div>
+            <div class="guideline-text"><strong>There is no penalty for declining a class.</strong> We schedule around your availability. All we ask is a prompt reply either way so we can plan accordingly.</div>
           </div>
           <div class="guideline-item">
             <div class="guideline-num">4</div>
-            <div class="guideline-text"><strong>We may occasionally ask outside your listed hours.</strong> A quick reply either way helps us keep things moving.</div>
+            <div class="guideline-text"><strong>We may occasionally ask about classes outside your listed hours.</strong> You are always free to decline, but a quick response helps us keep things moving.</div>
           </div>
           <div class="guideline-item">
             <div class="guideline-num">5</div>
-            <div class="guideline-text"><strong>If a student asks to reschedule, please check with Admin first.</strong> We need to confirm on our end before anything is confirmed with the student.</div>
+            <div class="guideline-text"><strong>Once you confirm a class within your availability, we expect that commitment to hold.</strong> Rescheduling a confirmed class takes considerable coordination across families, rooms, and other teachers, so teacher-initiated changes should be reserved for genuine emergencies. Reliability here is a key factor in how future classes are assigned.</div>
+          </div>
+          <div class="guideline-item">
+            <div class="guideline-num">6</div>
+            <div class="guideline-text"><strong>All reschedule and cancellation requests must be directed to Harland Admin.</strong> If a student or parent raises a reschedule or cancellation with you directly, please ask them to contact us. Any change not communicated to Admin is not valid, and the original class stands.</div>
           </div>
         </div>
 
-        <div class="ack-box">
-          <div class="ack-text">
-            Thanks for reading. A quick tap below to let us know you've seen this.
-          </div>
-          <button class="ack-btn" id="ack-sched" onclick="ackBtn('ack-sched', 'Acknowledged')">
-            &#10003; &nbsp;Got it
+        <div class="body-text" style="font-size:13.5px;margin-top:2px;">
+          Thank you for helping us keep scheduling smooth for families, for your colleagues, and for you.
+        </div>
+
+        <!-- v3: Commitment control replaces passive "Got it" (commitment device + clearer signal) -->
+        <div class="commit-box">
+          <div class="commit-title">Tap to confirm you have read these and will keep your <strong>Teachworks availability current</strong> through the summer term.</div>
+          <button class="commit-btn" id="commit-sched" onclick="commit('commit-sched')">
+            <span class="cb-box">&#10003;</span>
+            <span>Yes, I have read this and my availability is current</span>
           </button>
+          <div class="confirm-strip" id="sched-confirm" style="display:none;">
+            <div class="confirm-bar-wrap">
+              <div class="confirm-bar-track"><div class="confirm-bar-fill" id="sched-bar"></div></div>
+              <div class="confirm-label" id="sched-confirm-label">You are confirmed for June.</div>
+            </div>
+            <div class="confirm-count" id="sched-confirm-count"></div>
+          </div>
         </div>
       </div>
       <div class="card-footer">
-        <span class="card-counter">3 / 5</span>
+        <span class="card-counter">3 / 6</span>
         <div class="dots" id="dots3"></div>
       </div>
     </div>
 
-    <!-- ══ CARD 4: WELCOME ══ -->
+    <!-- ══ CARD 4: CLASS PREP & ROOM CARE ══ -->
     <div class="card">
       <div class="gold-bar"></div>
       <div class="card-header">
         <div class="header-left">
           <div class="brand">Harland Education</div>
-          <div class="brand-sub">Teacher Announcement</div>
+          <div class="brand-sub">Team Announcement</div>
+        </div>
+        <div class="header-right">
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <span class="section-tag tag-action"><span class="tag-dot"></span>Action needed</span>
+          <div class="card-title-row" style="margin-top:10px">
+            <div class="card-icon-title">
+              <span class="card-icon">&#127979;</span>
+              <div class="card-title">Class Prep &amp;<br>Room Care</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="body-text" style="font-size:13.5px;">
+          Our classrooms are shared spaces with equipment in constant use. Keeping them ready and tidy benefits every class that follows yours. Please review the points below.
+        </div>
+
+        <div style="font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);padding:4px 0 8px;">Technology and room issues</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="guideline-item checkable" id="room-pt-1" onclick="togglePoint('room-pt-1')">
+            <div class="guideline-num">1</div>
+            <div class="guideline-text"><strong>If anything in your room is broken or missing, flag it in your teacher group,</strong> including small items like a whiteboard marker or an ethernet connector. The sooner we know, the sooner we can replace it.</div>
+            <div class="gl-check">&#10003;</div>
+          </div>
+          <div class="guideline-item checkable" id="room-pt-2" onclick="togglePoint('room-pt-2')">
+            <div class="guideline-num">2</div>
+            <div class="guideline-text"><strong>Use your prep time to confirm everything is operational before class begins.</strong> Tech issues cannot always be fixed mid-class, and trying disrupts the lesson. A few minutes of checking beforehand prevents most problems.</div>
+            <div class="gl-check">&#10003;</div>
+          </div>
+        </div>
+
+        <div style="font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);padding:14px 0 8px;">Keeping rooms shared-ready</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="guideline-item checkable" id="room-pt-3" onclick="togglePoint('room-pt-3')">
+            <div class="guideline-num">3</div>
+            <div class="guideline-text"><strong>Keep your room free of personal belongings.</strong> Store personal items in your locker. If you do not have a locker yet, let us know and we will arrange one.</div>
+            <div class="gl-check">&#10003;</div>
+          </div>
+          <div class="guideline-item checkable" id="room-pt-4" onclick="togglePoint('room-pt-4')">
+            <div class="guideline-num">4</div>
+            <div class="guideline-text"><strong>Keep teaching materials such as books and test papers in your locker too,</strong> so other teachers can use the room.</div>
+            <div class="gl-check">&#10003;</div>
+          </div>
+          <div class="guideline-item checkable" id="room-pt-5" onclick="togglePoint('room-pt-5')">
+            <div class="guideline-num">5</div>
+            <div class="guideline-text"><strong>Leave the room as you would want to find it.</strong> Wipe the whiteboard, clear any rubbish, and return furniture to place.</div>
+            <div class="gl-check">&#10003;</div>
+          </div>
+          <div class="guideline-item checkable" id="room-pt-6" onclick="togglePoint('room-pt-6')">
+            <div class="guideline-num">6</div>
+            <div class="guideline-text"><strong>We will do a pass on all rooms at the end of June</strong> and remove anything that is not a shared-use item. Shared-use items that stay include whiteboards, stationery, and tech equipment (webcams, mice, keyboards).</div>
+            <div class="gl-check">&#10003;</div>
+          </div>
+        </div>
+
+        <div class="body-text" style="font-size:13.5px;margin-top:2px;">
+          Thank you for keeping our rooms ready for the next class.
+        </div>
+
+        <div class="commit-box">
+          <div class="commit-title">Tap to confirm you have read these and will <strong>keep your room shared-ready</strong> for the next class.</div>
+          <div class="commit-gate" id="room-gate-hint">Check all six points above before confirming.</div>
+          <button class="commit-btn" id="commit-room" onclick="commit('commit-room')" disabled>
+            <span class="cb-box">&#10003;</span>
+            <span>Yes, I have read this and will keep my room ready</span>
+          </button>
+          <div class="confirm-strip" id="room-confirm" style="display:none;">
+            <div class="confirm-bar-wrap">
+              <div class="confirm-bar-track"><div class="confirm-bar-fill" id="room-bar"></div></div>
+              <div class="confirm-label" id="room-confirm-label">Thank you for keeping rooms ready.</div>
+            </div>
+            <div class="confirm-count" id="room-confirm-count"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-counter">4 / 6</span>
+        <div class="dots" id="dotsRC"></div>
+      </div>
+    </div>
+
+    <!-- ══ CARD 5: WELCOME ══ -->
+    <div class="card">
+      <div class="gold-bar"></div>
+      <div class="card-header">
+        <div class="header-left">
+          <div class="brand">Harland Education</div>
+          <div class="brand-sub">Team Announcement</div>
         </div>
         <div class="header-right">
         </div>
@@ -857,51 +1222,97 @@ body {
           </div>
         </div>
 
+        <!-- New Team Members -->
+        <div style="font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);padding:4px 0 10px;">New Team Members</div>
+
+        <div style="background:var(--obs3);border:1px solid var(--bd-gold);border-radius:10px;overflow:hidden;">
+          <div style="padding:8px 14px;border-bottom:1px solid var(--bd-gold);display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);">3 new teachers</span>
+            <span style="font-size:10px;color: var(--gold-dark);">Tap a name for intro</span>
+          </div>
+
+          <div class="teacher-row" onclick="toggleBio('bio-dalton','chev-dalton')">
+            <div class="teacher-row-header">
+              <div class="t-name">Mr. Cort Dalton <span class="t-chevron" id="chev-dalton">&#9660;</span></div>
+              <div class="t-sub">Test prep &amp; English</div>
+              <div class="t-short">Mr. Dalton</div>
+            </div>
+          </div>
+          <div class="t-bio" id="bio-dalton">
+            <div class="t-bio-text">A native English speaker with more than seven years teaching in Taiwan, from elementary phonics through university-level academic English. He focuses on standardized test preparation and bilingual classroom instruction.</div>
+            <div class="t-programs"><span class="t-prog-pill">SAT</span><span class="t-prog-pill">SSAT</span><span class="t-prog-pill">TOEFL</span><span class="t-prog-pill">Academic English</span></div>
+          </div>
+
+          <div class="teacher-row" onclick="toggleBio('bio-hutten','chev-hutten')">
+            <div class="teacher-row-header">
+              <div class="t-name">Mr. Alexander Hutten-Czapski <span class="t-chevron" id="chev-hutten">&#9660;</span></div>
+              <div class="t-sub">English &amp; AMC math</div>
+              <div class="t-short">Mr. Hutten</div>
+            </div>
+          </div>
+          <div class="t-bio" id="bio-hutten">
+            <div class="t-bio-text">A BC-certified teacher with an honours background in biochemistry and over a decade of experience across Taiwan and Canada. He currently serves as Vice Principal of the BC Offshore Program at Taipei Canadian School.</div>
+            <div class="t-programs"><span class="t-prog-pill">Academic English</span><span class="t-prog-pill">AMC Math</span><span class="t-prog-pill">Science</span></div>
+          </div>
+
+          <div class="teacher-row" onclick="toggleBio('bio-marion','chev-marion')">
+            <div class="teacher-row-header" style="border-bottom:none">
+              <div class="t-name">Mr. Donald Marion <span class="t-chevron" id="chev-marion">&#9660;</span></div>
+              <div class="t-sub">English &amp; support</div>
+              <div class="t-short">Mr. Marion</div>
+            </div>
+          </div>
+          <div class="t-bio" id="bio-marion" style="border-bottom:none">
+            <div class="t-bio-text">An educator with a psychology background and K-12 teaching experience in California, including close work with English language learners and students with varied learning needs. He is currently pursuing a Master of Finance at National Taiwan University.</div>
+            <div class="t-programs"><span class="t-prog-pill">English</span><span class="t-prog-pill">ELL Support</span><span class="t-prog-pill">Academic Support</span></div>
+          </div>
+        </div>
+
         <!-- New Students -->
-        <div style="font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);padding:4px 0 10px;">New Students</div>
+        <div style="font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);padding:16px 0 10px;">New Students</div>
 
         <div style="background:var(--obs3);border:1px solid var(--bd-gold);border-radius:10px;overflow:hidden;">
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:8px 14px;border-bottom:1px solid var(--bd-gold);">
-            <div style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)">Student</div>
-            <div style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)">Programme</div>
-            <div style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)">Teacher</div>
+            <div style="font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)">Student</div>
+            <div style="font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)">Program</div>
+            <div style="font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)">Teacher</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04)">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
             <div style="font-size:13px;font-weight:500;color:var(--cream)">Andrew Hsu</div>
             <div style="font-size:12px;color:var(--slate)">Academic English</div>
             <div style="font-size:12px;color:var(--slate)">Mr. Hutten</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02)">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
             <div style="font-size:13px;font-weight:500;color:var(--cream)">Cecelia Hsu</div>
             <div style="font-size:12px;color:var(--slate)">SAT Test Prep</div>
             <div style="font-size:12px;color:var(--slate)">Mr. Dalton</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04)">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
             <div style="font-size:13px;font-weight:500;color:var(--cream)">Haemon Yang</div>
             <div style="font-size:12px;color:var(--slate)">HAC Professional</div>
             <div style="font-size:12px;color:var(--slate)">Mr. Glen</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02)">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
             <div style="font-size:13px;font-weight:500;color:var(--cream)">Hank Yeh</div>
             <div style="font-size:12px;color:var(--slate)">Academic English</div>
             <div style="font-size:12px;color:var(--slate)">Mr. Dalton</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04)">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
             <div style="font-size:13px;font-weight:500;color:var(--cream)">Howard Li</div>
             <div style="font-size:12px;color:var(--slate)">Executive Coaching</div>
             <div style="font-size:12px;color:var(--slate)">Mr. Teachey</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02)">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
             <div style="font-size:13px;font-weight:500;color:var(--cream)">Kailin Chen</div>
             <div style="font-size:12px;color:var(--slate)">Academic English</div>
-            <div style="font-size:12px;color:var(--slate)">Ms. M &amp; Mr. Arnold</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Arnold</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04)">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
             <div style="font-size:13px;font-weight:500;color:var(--cream)">Phoenix Kuo</div>
             <div style="font-size:12px;color:var(--slate)">SSAT Test Prep</div>
             <div style="font-size:12px;color:var(--slate)">Mr. Dalton</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02)">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
             <div style="font-size:13px;font-weight:500;color:var(--cream)">Phoenix Kuo</div>
             <div style="font-size:12px;color:var(--slate)">TOEFL Test Prep</div>
             <div style="font-size:12px;color:var(--slate)">Mr. Glen</div>
@@ -915,18 +1326,18 @@ body {
 
       </div>
       <div class="card-footer">
-        <span class="card-counter">4 / 5</span>
+        <span class="card-counter">5 / 6</span>
         <div class="dots" id="dots4"></div>
       </div>
     </div>
 
-    <!-- ══ CARD 5: THANK YOU + READ ACKNOWLEDGMENT ══ -->
+    <!-- ══ CARD 6: THANK YOU + READ ACKNOWLEDGMENT ══ -->
     <div class="card">
       <div class="gold-bar"></div>
       <div class="card-header">
         <div class="header-left">
           <div class="brand">Harland Education</div>
-          <div class="brand-sub">Teacher Announcement</div>
+          <div class="brand-sub">Team Announcement</div>
         </div>
         <div class="header-right">
         </div>
@@ -938,24 +1349,47 @@ body {
         <div class="intro-text">
           We are almost at the finish line for Q2, and we want to take a moment to say thank you. The schedule changes, the new additions, the occasional curveball. You have handled all of it with patience, professionalism, and a genuine willingness to make things work.<br><br>
           That kind of spirit is not easy to find, and it is exactly what sets this team apart. Harland is what it is because of the people in it, and that means you.<br><br>
-          Keep up the incredible work, and enjoy the summer ahead!
+          Thank you for the work you put in. Enjoy the summer ahead.
         </div>
 
-        <!-- Read Acknowledgment -->
+        <!-- Read Acknowledgment (v3: social proof + server-ready) -->
         <div class="read-ack-box">
-          <div class="read-ack-title">&#9997; Read Acknowledgment</div>
+          <div class="read-ack-title">&#9997; Sign to confirm you've read this</div>
           <div class="read-ack-text">
-            Please type your full name below to confirm you have read this announcement.
+            Your name and the time are recorded so we know the update reached you. This replaces a reply in the group.
           </div>
+
+          <!-- v3: social proof, how many of the team have already confirmed -->
+          <div class="confirm-strip" id="ack-confirm">
+            <div class="confirm-bar-wrap">
+              <div class="confirm-bar-track"><div class="confirm-bar-fill" id="ack-bar"></div></div>
+              <div class="confirm-label" id="ack-confirm-label">Most of the team has already confirmed.</div>
+            </div>
+            <div class="confirm-count" id="ack-confirm-count"></div>
+          </div>
+
+          <div class="read-ack-gate" id="ack-gate-hint">Please confirm the Scheduling and Class Prep &amp; Room Care cards before signing.</div>
           <div class="read-ack-input-row">
-            <input type="text" class="read-ack-input" id="ack-name-input" placeholder="Your full name" autocomplete="off">
-            <button class="read-ack-submit" id="ack-name-btn" onclick="submitReadAck()">Sign</button>
+            <input type="text" class="read-ack-input" id="ack-name-input" placeholder="Your full name" autocomplete="off" disabled>
+            <button class="read-ack-submit" id="ack-name-btn" onclick="submitReadAck()" disabled>Sign</button>
           </div>
           <div class="read-ack-timestamp" id="ack-timestamp"></div>
           <div class="signed-list" id="signed-list">
             <div class="signed-list-header">Signed by</div>
             <div id="signed-entries"></div>
           </div>
+        </div>
+
+        <!-- v3: Two-way pulse, one-tap sentiment / clarity signal -->
+        <div class="pulse-box">
+          <div class="pulse-q">How clear was this month's update?</div>
+          <div class="pulse-opts" id="pulse-opts">
+            <div class="pulse-opt" onclick="pulse(this,'unclear')"><span class="pulse-face">&#128533;</span><span class="pulse-txt">Unclear</span></div>
+            <div class="pulse-opt" onclick="pulse(this,'ok')"><span class="pulse-face">&#128528;</span><span class="pulse-txt">OK</span></div>
+            <div class="pulse-opt" onclick="pulse(this,'clear')"><span class="pulse-face">&#128578;</span><span class="pulse-txt">Clear</span></div>
+            <div class="pulse-opt" onclick="pulse(this,'very')"><span class="pulse-face">&#128512;</span><span class="pulse-txt">Very clear</span></div>
+          </div>
+          <div class="pulse-thanks" id="pulse-thanks">Thanks, that helps us write a better one next month.</div>
         </div>
 
         <div class="intro-sig">
@@ -968,7 +1402,7 @@ body {
         </div>
       </div>
       <div class="card-footer">
-        <span class="card-counter">5 / 5</span>
+        <span class="card-counter">6 / 6</span>
         <div class="dots" id="dots5"></div>
       </div>
     </div>
@@ -990,9 +1424,80 @@ const cards = carousel.querySelectorAll('.card');
 const total = cards.length;
 let cur = 0;
 
+/* =========================================================
+   HQ_INTEGRATION: data layer (swap this one block when folding into Harland HQ)
+   ---------------------------------------------------------
+   In standalone/demo mode, acknowledgments are saved to this browser only
+   (localStorage), so the sender CANNOT see them. That is the known limitation
+   of a standalone file. When this artifact is folded into Harland HQ:
+     - set HQ.enabled = true
+     - point HQ.base at the announcements API
+     - the three async functions below already have the right shape:
+         POST  {base}/{announcementId}/ack      {staff_id, name, type, value, ts}
+         GET   {base}/{announcementId}/summary   -> {confirmed, total, names:[...]}
+   Read-receipts then become per-person and server-side (the Tier-1 fix), and
+   the social-proof counter reads the real roster instead of the demo number.
+   ========================================================= */
+const HQ = {
+  enabled: false,                       // <- true in Harland HQ
+  base: '/api/announcements',           // <- HQ announcements endpoint
+  announcementId: 'june-2026',
+  rosterSize: 24                        // demo roster; in HQ this comes from /summary.total
+};
+const STORAGE_KEY = 'harland-' + HQ.announcementId + '-signatures';
+const COMMIT_KEY  = 'harland-' + HQ.announcementId + '-commits';
+const PULSE_KEY   = 'harland-' + HQ.announcementId + '-pulse';
+
+// Persist one event. In HQ this POSTs to the server (per-person, visible to sender).
+async function recordEvent(kind, payload) {
+  if (HQ.enabled) {
+    try {
+      await fetch(`${HQ.base}/${HQ.announcementId}/ack`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: kind, ...payload })
+      });
+    } catch (e) { /* HQ surfaces failed sends in its own log */ }
+  }
+  // local fallback so the demo still works and the UI stays consistent
+  const key = kind === 'commit' ? COMMIT_KEY : kind === 'pulse' ? PULSE_KEY : STORAGE_KEY;
+  if (kind === 'pulse') { try { localStorage.setItem(key, JSON.stringify(payload)); } catch {} return; }
+  try {
+    const arr = JSON.parse(localStorage.getItem(key)) || [];
+    arr.push(payload); localStorage.setItem(key, JSON.stringify(arr));
+  } catch {}
+}
+
+// How many have confirmed (read-ack signatures, for the closing-card bar). HQ reads /summary; demo reads localStorage.
+function confirmedCount() {
+  try { return (JSON.parse(localStorage.getItem(STORAGE_KEY)) || []).length; } catch { return 0; }
+}
+
+// How many have committed on the scheduling card (for the scheduling-card bar).
+function committedEntries() {
+  try { return JSON.parse(localStorage.getItem(COMMIT_KEY)) || []; } catch { return []; }
+}
+function committedCount(id) {
+  const e = committedEntries();
+  return id ? e.filter(x => x.id === id).length : e.length;
+}
+function isCommitted(id) { return committedEntries().some(x => x.id === id); }
+
+// Both card checkboxes must be ticked before the closing signature unlocks.
+const REQUIRED_COMMITS = ['commit-sched', 'commit-room'];
+function updateSignGate() {
+  const btn = document.getElementById('ack-name-btn');
+  const input = document.getElementById('ack-name-input');
+  const hint = document.getElementById('ack-gate-hint');
+  const allDone = REQUIRED_COMMITS.every(isCommitted);
+  if (btn) btn.disabled = !allDone;
+  if (input) input.disabled = !allDone;
+  if (hint) hint.style.display = allDone ? 'none' : 'block';
+}
+
+
 // Build dots in ALL dot containers
 function buildDots() {
-  ['dots','dots2','dots3','dots4','dots5'].forEach((id) => {
+  ['dots','dots2','dots3','dotsRC','dots4','dots5'].forEach((id) => {
     const el = document.getElementById(id);
     if (!el) return;
     el.innerHTML = '';
@@ -1044,25 +1549,21 @@ function ackBtn(id, msg) {
 
 // RSVP
 function rsvp(group, choice, el) {
-  const wrap = document.getElementById('rsvp-' + group);
-  wrap.querySelectorAll('.rsvp-row').forEach(r => {
+  // Dormant in non-event months. Scope to the clicked group's own container
+  // (closest .rsvp-options) so multiple RSVP groups can coexist when reused.
+  const wrap = el.closest('.rsvp-options');
+  if (wrap) wrap.querySelectorAll('.rsvp-row').forEach(r => {
     r.classList.remove('selected-yes', 'selected-no');
   });
   el.classList.add(choice === 'yes' ? 'selected-yes' : 'selected-no');
-  showToast(choice === 'yes' ? 'RSVP: attending \u2713 \u2014 reply YES in LINE group' : 'RSVP: not attending \u2014 reply NO in LINE group');
+  showToast(choice === 'yes' ? 'RSVP: attending \u2713. Reply YES in the LINE group.' : 'RSVP: not attending. Reply NO in the LINE group.');
 }
 
-// Read Acknowledgment
-const STORAGE_KEY = 'harland-june-2026-signatures';
-
+// Read Acknowledgment (signatures helpers; STORAGE_KEY defined in data layer above)
 function getSignatures() {
   try {
     return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
   } catch { return []; }
-}
-
-function saveSignatures(sigs) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(sigs));
 }
 
 function renderSignatures() {
@@ -1086,6 +1587,11 @@ function submitReadAck() {
   const ts = document.getElementById('ack-timestamp');
   const name = input.value.trim();
 
+  if (!REQUIRED_COMMITS.every(isCommitted)) {
+    showToast('Please confirm the Scheduling and Room Care cards first');
+    return;
+  }
+
   if (!name) {
     showToast('Please enter your name');
     input.focus();
@@ -1096,22 +1602,126 @@ function submitReadAck() {
   const dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
   const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
 
-  // Save to list
-  const sigs = getSignatures();
-  sigs.push({ name: name, time: dateStr + ', ' + timeStr });
-  saveSignatures(sigs);
+  // Record (server-side in HQ; local fallback in demo)
+  recordEvent('signature', { name: name, time: dateStr + ', ' + timeStr });
 
   // Reset input for next person
   input.value = '';
-  ts.textContent = 'Last signed by ' + name + ' on ' + dateStr + ' at ' + timeStr;
+  ts.textContent = 'Signed by ' + name + ' on ' + dateStr + ' at ' + timeStr;
   ts.classList.add('show');
 
   renderSignatures();
-  showToast('Thank you, ' + name + '!');
+  updateConfirmBars();
+  showToast('Thank you, ' + name + '. Recorded.');
 }
 
-// Load existing signatures on page load
+// ── COMMITMENT control (scheduling card) ──
+function commit(id) {
+  const btn = document.getElementById(id);
+  if (!btn || btn.classList.contains('committed')) return;
+  btn.classList.add('committed');
+  recordEvent('commit', { id: id, at: new Date().toISOString() });
+  const strip = document.getElementById(id.replace('commit-', '') + '-confirm');
+  if (strip) strip.style.display = 'flex';
+  updateConfirmBars();
+  updateSignGate();
+  showToast('Confirmed. Thank you.');
+}
+
+// ── Per-point checkboxes gate the Room Care confirm button ──
+function togglePoint(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('checked');
+  updateRoomGate();
+}
+function updateRoomGate() {
+  const pts = Array.prototype.slice.call(document.querySelectorAll('.guideline-item.checkable'));
+  const allChecked = pts.length > 0 && pts.every(function (p) { return p.classList.contains('checked'); });
+  const btn = document.getElementById('commit-room');
+  const hint = document.getElementById('room-gate-hint');
+  const committed = btn && btn.classList.contains('committed');
+  if (btn && !committed) btn.disabled = !allChecked;
+  if (hint) hint.style.display = (allChecked || committed) ? 'none' : 'block';
+}
+
+// ── PULSE (two-way clarity signal) ──
+function pulse(el, value) {
+  const opts = document.getElementById('pulse-opts');
+  opts.querySelectorAll('.pulse-opt').forEach(o => o.classList.remove('chosen'));
+  el.classList.add('chosen');
+  recordEvent('pulse', { value: value, at: new Date().toISOString() });
+  document.getElementById('pulse-thanks').classList.add('show');
+}
+
+// ── VIEW MODE (swipe vs scroll-all; mobile fallback so nothing critical hides behind a swipe) ──
+function setView(mode) {
+  const car = document.getElementById('carousel');
+  const swipeBtn = document.getElementById('vt-swipe');
+  const scrollBtn = document.getElementById('vt-scroll');
+  const nav = document.querySelector('.nav-row');
+  if (mode === 'scroll') {
+    car.classList.add('stacked');
+    scrollBtn.classList.add('active'); swipeBtn.classList.remove('active');
+    if (nav) nav.style.display = 'none';
+  } else {
+    car.classList.remove('stacked');
+    swipeBtn.classList.add('active'); scrollBtn.classList.remove('active');
+    if (nav) nav.style.display = 'flex';
+    goTo(0);
+  }
+}
+
+// ── SOCIAL-PROOF bars (read-ack + scheduling) ──
+function updateConfirmBars() {
+  const total = HQ.rosterSize || 1;
+  // Closing-card bar: read-ack signatures.
+  const done = Math.max(confirmedCount(), 0);
+  const pct = Math.min(100, Math.round((done / total) * 100));
+  const ackBar = document.getElementById('ack-bar');
+  const ackCount = document.getElementById('ack-confirm-count');
+  const ackLabel = document.getElementById('ack-confirm-label');
+  if (ackBar) ackBar.style.width = pct + '%';
+  if (ackCount) ackCount.textContent = done + ' of ' + total + ' confirmed';
+  if (ackLabel) ackLabel.textContent = done === 0
+      ? 'Be the first to confirm you have read this.'
+      : (pct >= 60 ? 'Most of the team has already confirmed.' : 'Your colleagues are confirming.');
+  // Scheduling-card bar: commitments on that card.
+  const cdone = Math.max(committedCount('commit-sched'), 0);
+  const cpct = Math.min(100, Math.round((cdone / total) * 100));
+  const schedBar = document.getElementById('sched-bar');
+  const schedCount = document.getElementById('sched-confirm-count');
+  if (schedBar) schedBar.style.width = cpct + '%';
+  if (schedCount) schedCount.textContent = cdone + ' of ' + total + ' confirmed';
+  // Room Care bar: commitments on that card.
+  const rdone = Math.max(committedCount('commit-room'), 0);
+  const rpct = Math.min(100, Math.round((rdone / total) * 100));
+  const roomBar = document.getElementById('room-bar');
+  const roomCount = document.getElementById('room-confirm-count');
+  if (roomBar) roomBar.style.width = rpct + '%';
+  if (roomCount) roomCount.textContent = rdone + ' of ' + total + ' confirmed';
+}
+
+// Load existing signatures + paint social-proof on page load
 renderSignatures();
+updateConfirmBars();
+// Reflect any existing commitments and gate the signature accordingly
+REQUIRED_COMMITS.forEach(function (id) {
+  if (isCommitted(id)) {
+    const b = document.getElementById(id); if (b) b.classList.add('committed');
+    const s = document.getElementById(id.replace('commit-', '') + '-confirm'); if (s) s.style.display = 'flex';
+  }
+});
+updateSignGate();
+updateRoomGate();
+
+// Expandable teacher bios (New Team Members)
+function toggleBio(bioId, chevId) {
+  const bio = document.getElementById(bioId);
+  const chev = document.getElementById(chevId);
+  if (bio) bio.classList.toggle('open');
+  if (chev) chev.classList.toggle('open');
+}
 
 // Init
 buildDots();
