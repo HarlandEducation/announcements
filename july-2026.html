@@ -920,7 +920,7 @@ body {
           <div class="brand-sub">Team Announcement</div>
         </div>
         <div class="header-right">
-          <div class="read-time">&#9201; 6 cards &middot; ~3 min read</div>
+          <div class="read-time">&#9201; 7 cards &middot; ~3 min read</div>
         </div>
       </div>
       <div class="card-body">
@@ -969,6 +969,11 @@ body {
             <div class="qa-label"><strong>Read acknowledgment</strong> · confirm below</div>
             <div class="qa-arrow">&#8250;</div>
           </div>
+          <div class="qa-item" onclick="goTo(6)">
+            <div class="qa-dot dot-info"></div>
+            <div class="qa-label"><strong>Team status</strong> · who has confirmed</div>
+            <div class="qa-arrow">&#8250;</div>
+          </div>
         </div>
 
         <div class="cover-swipe-hint" style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
@@ -980,7 +985,7 @@ body {
         </div>
       </div>
       <div class="card-footer">
-        <span class="card-counter">1 / 6</span>
+        <span class="card-counter">1 / 7</span>
         <div class="dots" id="dots"></div>
       </div>
     </div>
@@ -1015,7 +1020,7 @@ body {
         </div>
       </div>
       <div class="card-footer">
-        <span class="card-counter">2 / 6</span>
+        <span class="card-counter">2 / 7</span>
         <div class="dots" id="dots2"></div>
       </div>
     </div>
@@ -1086,7 +1091,7 @@ body {
         </div>
       </div>
       <div class="card-footer">
-        <span class="card-counter">3 / 6</span>
+        <span class="card-counter">3 / 7</span>
         <div class="dots" id="dots3"></div>
       </div>
     </div>
@@ -1143,7 +1148,7 @@ body {
         </div>
       </div>
       <div class="card-footer">
-        <span class="card-counter">4 / 6</span>
+        <span class="card-counter">4 / 7</span>
         <div class="dots" id="dotsCU"></div>
       </div>
     </div>
@@ -1241,7 +1246,7 @@ body {
 
       </div>
       <div class="card-footer">
-        <span class="card-counter">5 / 6</span>
+        <span class="card-counter">5 / 7</span>
         <div class="dots" id="dots4"></div>
       </div>
     </div>
@@ -1271,7 +1276,7 @@ body {
         <div class="read-ack-box">
           <div class="read-ack-title">&#9997; Confirm you have read this</div>
           <div class="read-ack-text">
-            Add your name to confirm this reached you. Thank you.
+            Add your name to confirm this reached you. Your confirmation appears on the Team status card next, so we can all see we are on the same page.
           </div>
           <div class="read-ack-input-row">
             <input type="text" class="read-ack-input" id="ack-name-input" placeholder="Your full name" autocomplete="off">
@@ -1302,8 +1307,56 @@ body {
         </div>
       </div>
       <div class="card-footer">
-        <span class="card-counter">6 / 6</span>
+        <span class="card-counter">6 / 7</span>
         <div class="dots" id="dots5"></div>
+      </div>
+    </div>
+
+    <!-- ══ CARD 7: TEAM STATUS (embedded live tracker) ══ -->
+    <div class="card">
+      <div class="gold-bar"></div>
+      <div class="card-header">
+        <div class="header-left">
+          <div class="brand">Harland Education</div>
+          <div class="brand-sub">Team Announcement</div>
+        </div>
+        <div class="header-right">
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <span class="section-tag tag-info"><span class="tag-dot"></span>Read acknowledgment</span>
+          <div class="card-title-row" style="margin-top:10px">
+            <div class="card-icon-title">
+              <span class="card-icon">&#128203;</span>
+              <div class="card-title">Team status</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="body-text" style="font-size:13.5px;">
+          Who on the team has confirmed they have read this month's announcement.
+        </div>
+
+        <div class="confirm-strip" id="team-progress" style="display:flex;">
+          <div class="confirm-bar-wrap">
+            <div class="confirm-bar-track"><div class="confirm-bar-fill" id="team-bar"></div></div>
+            <div class="confirm-label" id="team-label">Loading team status&hellip;</div>
+          </div>
+          <div class="confirm-count" id="team-count"></div>
+        </div>
+
+        <div style="display:flex;justify-content:flex-end;margin:12px 0 6px;">
+          <button class="commit-btn" style="width:auto;padding:8px 18px;" onclick="refreshTeam()">Refresh</button>
+        </div>
+
+        <div id="team-list" style="display:flex;flex-direction:column;gap:6px;margin-top:2px;"></div>
+
+        <div id="team-note" style="font-size:11.5px;color:var(--mist);margin-top:13px;line-height:1.5;"></div>
+      </div>
+      <div class="card-footer">
+        <span class="card-counter">7 / 7</span>
+        <div class="dots" id="dotsTS"></div>
       </div>
     </div>
 
@@ -1340,7 +1393,7 @@ let cur = 0;
    ========================================================= */
 // ── To go live: paste your Google Apps Script Web App /exec URL between the quotes.
 //    Leave it empty ('') for demo mode, which records only in this browser.
-const ENDPOINT = '';
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxLEMov7iLNUQ_DeNGaX1MZ0YMjSuazua4rSDJdkZ5kjCPoKiTA3oiEEKmtokvnY04/exec';
 
 const HQ = {
   announcementId: 'july-2026',
@@ -1396,7 +1449,7 @@ function isCommitted(id) { return committedEntries().some(x => x.id === id); }
 
 // Build dots in ALL dot containers
 function buildDots() {
-  ['dots','dots2','dots3','dotsCU','dots4','dots5'].forEach((id) => {
+  ['dots','dots2','dots3','dotsCU','dots4','dots5','dotsTS'].forEach((id) => {
     const el = document.getElementById(id);
     if (!el) return;
     el.innerHTML = '';
@@ -1458,7 +1511,73 @@ function rsvp(group, choice, el) {
   showToast(choice === 'yes' ? 'RSVP: attending \u2713. Reply YES in the LINE group.' : 'RSVP: not attending. Reply NO in the LINE group.');
 }
 
-// ── Read acknowledgment (records the confirmation to the shared list) ──
+// ── Embedded team status tracker (reads the same shared list the confirm writes to) ──
+const ROSTER = ["Cort Dalton","Alexander Hutten-Czapski","Donald Marion","Marvin Rodriguez","Alex Teachey","Stewart Glen","Phil Harris","Ruby Cheng","Chad O'Grant","Zane Arnold","Minley Yeh","Dylan Sadow-Reinshagen","William Johnson","Chris Judkins","Jan Luksa","Marie Manuel"];
+let SIGS_MEM = [];  // in-session fallback when storage is blocked (sandboxed preview)
+
+function jsonp(url) {
+  return new Promise(function (res, rej) {
+    var cb = '__hlcb' + Date.now() + Math.floor(Math.random() * 1000);
+    var s = document.createElement('script');
+    var t = setTimeout(function () { cleanup(); rej(); }, 12000);
+    function cleanup() { clearTimeout(t); delete window[cb]; if (s.parentNode) s.parentNode.removeChild(s); }
+    window[cb] = function (d) { cleanup(); res(d); };
+    s.onerror = function () { cleanup(); rej(); };
+    s.src = url + (url.indexOf('?') > -1 ? '&' : '?') + 'announcementId=' + encodeURIComponent(HQ.announcementId) + '&callback=' + cb;
+    document.body.appendChild(s);
+  });
+}
+async function fetchSignatures() {
+  if (ENDPOINT) {
+    try { const d = await jsonp(ENDPOINT); return (d && d.signatures) ? d.signatures : []; }
+    catch (e) { return null; }  // null = could not reach the shared list
+  }
+  try { const v = localStorage.getItem(STORAGE_KEY); return v == null ? SIGS_MEM.slice() : (JSON.parse(v) || []); }
+  catch (e) { return SIGS_MEM.slice(); }
+}
+function normName(s) {
+  return String(s || '').toLowerCase().replace(/^(mr|mrs|ms|miss|dr|prof)\.?\s+/, '').replace(/[^a-z ]/g, '').replace(/\s+/g, ' ').trim();
+}
+function sigMatch(rosterName, sigName) {
+  var a = normName(rosterName), b = normName(sigName);
+  if (!a || !b) return false;
+  if (a === b) return true;
+  var at = a.split(' '), bt = b.split(' ');
+  var sh = at.length <= bt.length ? at : bt, lo = at.length <= bt.length ? bt : at;
+  return sh.every(function (t) { return lo.indexOf(t) !== -1; });
+}
+async function renderTeam() {
+  var list = document.getElementById('team-list');
+  if (!list) return;
+  var sigs = await fetchSignatures();
+  var offline = sigs === null;
+  if (offline) sigs = [];
+  var totalR = ROSTER.length, signed = 0, rows = '';
+  ROSTER.forEach(function (name) {
+    var hit = sigs.some(function (s) { return sigMatch(name, s.name); });
+    if (hit) signed++;
+    rows += '<div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--bd);background:' + (hit ? 'var(--grn-pale)' : 'var(--obs3)') + ';">'
+      + '<span style="width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;flex:none;'
+      + (hit ? 'background:var(--grn);color:#fff;">&#10003;' : 'border:1.5px solid var(--amb);color:transparent;">')
+      + '</span>'
+      + '<span style="flex:1;font-size:13px;color:var(--cream);">' + name + '</span>'
+      + '<span style="font-size:11.5px;font-weight:500;color:' + (hit ? 'var(--grn)' : 'var(--amb)') + ';">' + (hit ? 'Confirmed' : 'Waiting') + '</span>'
+      + '</div>';
+  });
+  list.innerHTML = rows;
+  var pct = Math.round((signed / totalR) * 100);
+  var bar = document.getElementById('team-bar'); if (bar) bar.style.width = pct + '%';
+  var lab = document.getElementById('team-label');
+  if (lab) lab.textContent = signed === totalR ? 'Everyone has confirmed. Thank you.' : (signed + ' of ' + totalR + ' have confirmed so far.');
+  var cnt = document.getElementById('team-count'); if (cnt) cnt.textContent = signed + ' of ' + totalR;
+  var note = document.getElementById('team-note');
+  if (note) {
+    if (ENDPOINT) note.textContent = offline ? 'Could not reach the shared list just now. Tap Refresh to try again.' : 'Live from the shared list. Tap Refresh for the latest.';
+    else note.textContent = 'Demo mode: this shows confirmations from this device only. Once the shared endpoint is connected, this shows the whole team on any device.';
+  }
+}
+function refreshTeam() { renderTeam(); }
+
 function submitReadAck() {
   var input = document.getElementById('ack-name-input');
   var ts = document.getElementById('ack-timestamp');
@@ -1468,10 +1587,12 @@ function submitReadAck() {
   var dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
   var timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
   recordEvent('signature', { name: name, time: dateStr + ', ' + timeStr });
+  SIGS_MEM.push({ name: name, time: dateStr + ', ' + timeStr });
   input.value = '';
   ts.textContent = 'Confirmed as ' + name + ' on ' + dateStr + ' at ' + timeStr;
   ts.classList.add('show');
   showToast('Thank you, ' + name + '. Confirmed.');
+  setTimeout(renderTeam, 500);  // let the record land, then refresh the team view
 }
 
 // ── COMMITMENT control (action cards) ──
@@ -1541,6 +1662,9 @@ updateConfirmBars();
     const s = document.getElementById(id.replace('commit-', '') + '-confirm'); if (s) s.style.display = 'flex';
   }
 });
+
+// Paint the embedded team status on load
+renderTeam();
 
 
 function toggleBio(bioId, chevId) {
