@@ -931,7 +931,7 @@ body {
           <div class="as-row" onclick="goTo(2)">
             <div class="as-check">&#10003;</div>
             <div class="as-body">
-              <div class="as-task">Read the new Teacher Training Programme and confirm you have seen it.</div>
+              <div class="as-task">Read the new Teacher Training Program and confirm you have seen it.</div>
               <div class="as-due">No deadline yet, details to follow &middot; tap to read</div>
             </div>
             <div class="as-arrow">&#8250;</div>
@@ -946,7 +946,7 @@ body {
           </div>
           <div class="qa-item" onclick="goTo(2)">
             <div class="qa-dot dot-action"></div>
-            <div class="qa-label"><strong>Teacher Training Programme</strong> · new initiative</div>
+            <div class="qa-label"><strong>Teacher Training Program</strong> · new initiative</div>
             <div class="qa-arrow">&#8250;</div>
           </div>
           <div class="qa-item" onclick="goTo(3)">
@@ -1006,7 +1006,7 @@ body {
           Happy<br><em>July,</em><br>Harland Team.
         </div>
         <div class="intro-text">
-          We hope the summer term is going well and that you are finding a good rhythm with your students. This month brings an important new initiative, our <strong>Teacher Training Programme</strong>, which we are introducing to help us all keep growing together.<br><br>
+          We hope the summer term is going well and that you are finding a good rhythm with your students. This month brings an important new initiative, our <strong>Teacher Training Program</strong>, which we are introducing to help us all keep growing together.<br><br>
           We are also glad to welcome a new member of the teaching team and a group of new students who joined us in June. You will find everyone inside.<br><br>
           Thank you, as always, for the care and commitment you bring to our students and families.
         </div>
@@ -1025,7 +1025,7 @@ body {
       </div>
     </div>
 
-    <!-- ══ CARD 3: TEACHER TRAINING PROGRAMME ══ -->
+    <!-- ══ CARD 3: TEACHER TRAINING PROGRAM ══ -->
     <div class="card">
       <div class="gold-bar"></div>
       <div class="card-header">
@@ -1042,13 +1042,13 @@ body {
           <div class="card-title-row" style="margin-top:10px">
             <div class="card-icon-title">
               <span class="card-icon">&#127891;</span>
-              <div class="card-title">Teacher Training<br>Programme</div>
+              <div class="card-title">Teacher Training<br>Program</div>
             </div>
           </div>
         </div>
 
         <div class="body-text" style="font-size:13.5px;">
-          We wanted to let you know about an important new initiative. Harland will be launching a <strong>Teacher Training Programme</strong> that all teachers will be expected to complete.
+          We wanted to let you know about an important new initiative. Harland will be launching a <strong>Teacher Training Program</strong> that all teachers will be expected to complete.
         </div>
 
         <div style="font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);padding:4px 0 8px;">Built around three pillars</div>
@@ -1068,7 +1068,7 @@ body {
         </div>
 
         <div class="body-text" style="font-size:13.5px;">
-          We recognize that many of you have been with Harland for a long time and have contributed significantly to where we are today. This programme is not about going back to basics. It's about moving forward together. Above all, this is about alignment. As our team grows, we want to ensure that everyone is working from the same playbook with a shared understanding of who we are and how we work.
+          We recognize that many of you have been with Harland for a long time and have contributed significantly to where we are today. This program is not about going back to basics. It's about moving forward together. Above all, this is about alignment. As our team grows, we want to ensure that everyone is working from the same playbook with a shared understanding of who we are and how we work.
         </div>
 
         <div class="cta-strip">
@@ -1076,7 +1076,7 @@ body {
         </div>
 
         <div class="commit-box">
-          <div class="commit-title">Tap to confirm you have read this and understand the <strong>Teacher Training Programme</strong> is coming.</div>
+          <div class="commit-title">Tap to confirm you have read this and understand the <strong>Teacher Training Program</strong> is coming.</div>
           <button class="commit-btn" id="commit-ttp" onclick="commit('commit-ttp')">
             <span class="cb-box">&#10003;</span>
             <span>Yes, I have read this</span>
@@ -1546,6 +1546,12 @@ function sigMatch(rosterName, sigName) {
   var sh = at.length <= bt.length ? at : bt, lo = at.length <= bt.length ? bt : at;
   return sh.every(function (t) { return lo.indexOf(t) !== -1; });
 }
+function escapeHtml(s) {
+  return String(s || '').replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
 async function renderTeam() {
   var list = document.getElementById('team-list');
   if (!list) return;
@@ -1554,14 +1560,20 @@ async function renderTeam() {
   if (offline) sigs = [];
   var totalR = ROSTER.length, signed = 0, rows = '';
   ROSTER.forEach(function (name) {
-    var hit = sigs.some(function (s) { return sigMatch(name, s.name); });
+    var match = sigs.find(function (s) { return sigMatch(name, s.name); });
+    var hit = !!match;
     if (hit) signed++;
-    rows += '<div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--bd);background:' + (hit ? 'var(--grn-pale)' : 'var(--obs3)') + ';">'
-      + '<span style="width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;flex:none;'
-      + (hit ? 'background:var(--grn);color:#fff;">&#10003;' : 'border:1.5px solid var(--amb);color:transparent;">')
+    var sub = hit
+      ? 'Read acknowledgment &middot; ' + escapeHtml(match.time || '')
+      : 'Not yet confirmed';
+    rows += '<div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--bd);background:' + (hit ? 'var(--grn-pale)' : 'var(--obs3)') + ';">'
+      + '<span style="width:18px;height:18px;border-radius:4px;flex:none;margin-top:1px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;'
+      + (hit ? 'background:var(--grn);border:1px solid var(--grn);color:#fff;">&#10003;' : 'border:1.5px solid var(--amb);color:transparent;">')
       + '</span>'
-      + '<span style="flex:1;font-size:13px;color:var(--cream);">' + name + '</span>'
-      + '<span style="font-size:11.5px;font-weight:500;color:' + (hit ? 'var(--grn)' : 'var(--amb)') + ';">' + (hit ? 'Confirmed' : 'Waiting') + '</span>'
+      + '<div style="flex:1;min-width:0;">'
+      + '<div style="font-size:13px;color:var(--cream);">' + escapeHtml(name) + '</div>'
+      + '<div style="font-size:11px;color:' + (hit ? 'var(--grn)' : 'var(--mist)') + ';margin-top:2px;">' + sub + '</div>'
+      + '</div>'
       + '</div>';
   });
   list.innerHTML = rows;
@@ -1637,7 +1649,7 @@ function setView(mode) {
 // ── SOCIAL-PROOF bars (read-ack + scheduling) ──
 function updateConfirmBars() {
   const total = HQ.rosterSize || 1;
-  // Teacher Training Programme card bar: commitments on that card.
+  // Teacher Training Program card bar: commitments on that card.
   const cdone = Math.max(committedCount('commit-ttp'), 0);
   const cpct = Math.min(100, Math.round((cdone / total) * 100));
   const ttpBar = document.getElementById('ttp-bar');
