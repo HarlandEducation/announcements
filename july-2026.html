@@ -928,6 +928,14 @@ body {
         <!-- v3: Front-loaded action summary (inverted pyramid, the one thing that matters, first) -->
         <div class="action-summary">
           <div class="as-label"><span class="as-pulse"></span>What you need to do</div>
+          <div class="as-row" onclick="goTo(3)">
+            <div class="as-check">&#10003;</div>
+            <div class="as-body">
+              <div class="as-task">Send through any missing writing projects and end-of-unit measurables.</div>
+              <div class="as-due">Due <strong>Friday, July 31</strong> &middot; tap for the format</div>
+            </div>
+            <div class="as-arrow">&#8250;</div>
+          </div>
           <div class="as-row" onclick="goTo(2)">
             <div class="as-check">&#10003;</div>
             <div class="as-body">
@@ -951,7 +959,7 @@ body {
           </div>
           <div class="qa-item" onclick="goTo(3)">
             <div class="qa-dot dot-action"></div>
-            <div class="qa-label"><strong>Curriculum &amp; Unit Completion</strong> · what to check</div>
+            <div class="qa-label"><strong>Curriculum &amp; Unit Completion</strong> · unit audit due Jul 31</div>
             <div class="qa-arrow">&#8250;</div>
           </div>
           <div class="qa-item" onclick="goTo(1)">
@@ -1007,7 +1015,8 @@ body {
         </div>
         <div class="intro-text">
           We hope the summer term is going well and that you are finding a good rhythm with your students. This month brings an important new initiative, our <strong>Teacher Training Program</strong>, which we are introducing to help us all keep growing together.<br><br>
-          We are also glad to welcome a new member of the teaching team and a group of new students who joined us in June. You will find everyone inside.<br><br>
+          There are also a few operational updates inside. We will be auditing writing projects and end-of-unit measurables, with a deadline of <strong>Friday, July 31</strong>. Details are on the Curriculum card.<br><br>
+          The family has also grown this month. You will meet our newest teacher and the students who joined us in July on the Welcome card.<br><br>
           Thank you, as always, for the care and commitment you bring to our students and families.
         </div>
         <div class="intro-sig">
@@ -1132,8 +1141,37 @@ body {
           Once a unit is complete, notify Admin in your LINE group with the student's name and the writing project or test result. Admin will then send a unit completion to the parents, sharing their child's progress and areas for growth.
         </div>
 
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 0 8px;">
+          <div style="font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);">Unit audit</div>
+          <span class="qa-count">Due Fri, Jul 31</span>
+        </div>
+        <div class="body-text" style="font-size:13.5px;">
+          We will be auditing student writing projects and end-of-unit measurables completed since the beginning of the year. Please check the records for each student you are the primary teacher of. Each student should have <strong>one completed measurable per unit</strong>. For English, this is a writing project. For Science, Math, SAT prep, and other subjects, this may be a test, assessment, or another form of unit deliverable, whatever your curriculum specifies. Please also ensure that <strong>grades and comments have been filled in</strong>, and that all fillable sections have been reviewed and completed. If anything is missing, send it through by <strong>Friday, July 31</strong>, in the format below, one message per item, in your teacher LINE group.
+        </div>
+
+        <div style="background:var(--obs3);border:1px solid var(--bd-gold);border-radius:10px;overflow:hidden;margin-top:2px;">
+          <div style="padding:7px 14px;border-bottom:1px solid var(--bd-gold);font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dark);">Example</div>
+          <div style="padding:12px 14px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;line-height:1.7;color:var(--cream);">
+            Rafael Chen L4U1 My Best Winter Vacation<br>
+            <span style="color:var(--slate);">(insert document link)</span>
+          </div>
+        </div>
+
+        <div style="background:rgba(201,168,76,0.05);border:1px dashed var(--bd-gold);border-radius:10px;overflow:hidden;">
+          <div style="padding:7px 14px;border-bottom:1px dashed var(--bd-gold);font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);">Your entry</div>
+          <div style="padding:12px 14px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;line-height:1.7;color:var(--mist);">
+            [Student name] [Level &amp; Unit] [Writing project title]<br>
+            (insert document link)
+          </div>
+        </div>
+
+        <div style="font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);padding:16px 0 8px;">Room etiquette reminder</div>
+        <div class="cta-strip">
+          When you finish a class, please make sure all computers and laptops are turned off, the air conditioning is off, the lights are off, and the door is left open. An open door is how the next teacher knows a room is available.
+        </div>
+
         <div class="commit-box">
-          <div class="commit-title">Tap to confirm you have read this and understand the curriculum and unit completion steps.</div>
+          <div class="commit-title">Tap to confirm you have read this and understand the curriculum, unit completion, and unit audit steps.</div>
           <button class="commit-btn" id="commit-curric" onclick="commit('commit-curric')">
             <span class="cb-box">&#10003;</span>
             <span>Yes, I have read this</span>
@@ -1199,7 +1237,7 @@ body {
         </div>
 
         <!-- New Students -->
-        <div style="font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);padding:16px 0 10px;">New Students &middot; June</div>
+        <div style="font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);padding:16px 0 10px;">New Students &middot; July</div>
 
         <div style="background:var(--obs3);border:1px solid var(--bd-gold);border-radius:10px;overflow:hidden;">
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:8px 14px;border-bottom:1px solid var(--bd-gold);">
@@ -1208,38 +1246,78 @@ body {
             <div style="font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)">Teacher</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
-            <div style="font-size:13px;font-weight:500;color:var(--cream)">Weina Bi</div>
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Nini Wheeler</div>
             <div style="font-size:12px;color:var(--slate)">Math</div>
-            <div style="font-size:12px;color:var(--slate)">Mr. Teachey</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Marion</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
-            <div style="font-size:13px;font-weight:500;color:var(--cream)">Max Chou</div>
-            <div style="font-size:12px;color:var(--slate)">Academic English</div>
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Aoife Wheeler</div>
+            <div style="font-size:12px;color:var(--slate)">Math</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Rodriguez</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">MacKenzie Li</div>
+            <div style="font-size:12px;color:var(--slate)">English</div>
             <div style="font-size:12px;color:var(--slate)">Mr. Dalton</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
-            <div style="font-size:13px;font-weight:500;color:var(--cream)">Elvis Liao</div>
-            <div style="font-size:12px;color:var(--slate)">AP CSP</div>
-            <div style="font-size:12px;color:var(--slate)">Dr. Teachey</div>
-          </div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
-            <div style="font-size:13px;font-weight:500;color:var(--cream)">Bruce Yang</div>
-            <div style="font-size:12px;color:var(--slate)">HAC Science</div>
-            <div style="font-size:12px;color:var(--slate)">Dr. Teachey</div>
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Jasper Yeh</div>
+            <div style="font-size:12px;color:var(--slate)">English</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Hutten</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
-            <div style="font-size:13px;font-weight:500;color:var(--cream)">Bruce Yang</div>
-            <div style="font-size:12px;color:var(--slate)">HAC Literature</div>
-            <div style="font-size:12px;color:var(--slate)">Mr. Glen</div>
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Natalia Pan</div>
+            <div style="font-size:12px;color:var(--slate)">English</div>
+            <div style="font-size:12px;color:var(--slate)">Ms. M</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
-            <div style="font-size:13px;font-weight:500;color:var(--cream)">Ms. Peihuan Chou</div>
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Pei Huan</div>
             <div style="font-size:12px;color:var(--slate)">Executive Coaching</div>
             <div style="font-size:12px;color:var(--slate)">Mr. Glen</div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px">
-            <div style="font-size:13px;font-weight:500;color:var(--cream)">Mikha Han</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Ryan Shen</div>
+            <div style="font-size:12px;color:var(--slate)">Analytical Writing</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Marion</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Robin Lu</div>
             <div style="font-size:12px;color:var(--slate)">Academic English</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Hutten</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Elsa Hu</div>
+            <div style="font-size:12px;color:var(--slate)">Academic English</div>
+            <div style="font-size:12px;color:var(--slate)">Ms. M &amp; Mr. Rodriguez</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Elvis Liao</div>
+            <div style="font-size:12px;color:var(--slate)">Honors Application Essay</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Arnold</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Joseph Junior Hsu</div>
+            <div style="font-size:12px;color:var(--slate)">Academic English</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Arnold</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Ted Yeh</div>
+            <div style="font-size:12px;color:var(--slate)">Academic Coaching</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Judkins</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Ted Yeh</div>
+            <div style="font-size:12px;color:var(--slate)">Math</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Judkins</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid rgba(0,0,0,.04);background:rgba(0,0,0,.02)">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Ryder Huang</div>
+            <div style="font-size:12px;color:var(--slate)">AICE General Paper</div>
+            <div style="font-size:12px;color:var(--slate)">Mr. Glen</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px">
+            <div style="font-size:13px;font-weight:500;color:var(--cream)">Kyler Chang</div>
+            <div style="font-size:12px;color:var(--slate)">SSAT Prep</div>
             <div style="font-size:12px;color:var(--slate)">Mr. Dalton</div>
           </div>
         </div>
@@ -1264,12 +1342,13 @@ body {
       </div>
       <div class="intro-body">
         <div class="intro-greeting">
-          Thank<br>you. <em>All<br>of you.</em>
+          Moving<br>forward. <em>Together.</em>
         </div>
         <div class="intro-text">
-          As the summer term rolls on, we want to pause and simply say thank you. For the new initiatives you have taken on, the new faces you have welcomed, and the steady care you bring to your students every single day. None of it goes unnoticed, and all of it matters.<br><br>
-          You are a big part of why Harland feels like Harland. The warmth, the high standards, the real investment in every child, all of that comes from you, and families feel it in every lesson.<br><br>
-          So keep going, and keep bringing your best. We are grateful to have you on this team, and we are excited for everything the months ahead will bring. Thank you, truly.
+          As the summer term rolls on, we want to pause and say thank you for the new initiatives you have taken on, the new faces you have welcomed, and the steady care you bring to your students every day. None of it goes unnoticed.<br><br>
+          We know this month brings new expectations, from the Teacher Training Program to the unit audit. These changes are not about adding work for the sake of it. They are about bringing us closer together around a shared vision for how we teach, how we grow, and the standard we hold ourselves to. When we are aligned, every student and every family benefits.<br><br>
+          You are a big part of why Harland feels like Harland. The warmth, the high standards, the real investment in every child, all of that comes from you. There is real strength in a team that moves in the same direction, and that is exactly what we are building here.<br><br>
+          Keep going, and keep bringing your best. We are grateful to have you on this team, and we are excited for everything ahead.
         </div>
 
         <!-- Read Acknowledgment (v3: social proof + server-ready) -->
