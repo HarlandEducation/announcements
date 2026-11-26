@@ -1,0 +1,99 @@
+/**
+ * Harland — Announcement Acknowledgment Backend (v3)
+ *
+ * What changed from v2:
+ *   Each announcement now gets its own tab, named from the announcement id.
+ *   'august-2026' writes to and reads from a tab called "August 2026".
+ *   The tab is created automatically the first time someone confirms, so a new
+ *   month needs no setup. Because reads are scoped to the month's own tab, one
+ *   month's confirmations can never appear on another month's tracker.
+ *
+ * Existing July rows stay where they are, in the original "Responses" tab.
+ *
+ * To create a month's tab ahead of time, open this editor, choose
+ * createMonthTab from the function dropdown, and click Run.
+ */
+
+var ROSTER_TOTAL = 19;
+var FALLBACK_TAB = 'Responses';
+var HEADERS = ['Received', 'Announcement', 'Name', 'Type', 'Value', 'Client time'];
+
+// Run this manually to create an upcoming month's tab early.
+// Change the id below to whichever month you want, then click Run.
+function createMonthTab() {
+  var sh = getSheetFor('august-2026');
+  SpreadsheetApp.getActiveSpreadsheet().toast('Ready: ' + sh.getName());
+}
+
+function doPost(e) {
+  var lock = LockService.getScriptLock();
+  lock.waitLock(20000);
+  try {
+    var b = JSON.parse(e.postData.contents);
+    var aid = String(b.announcementId || '');
+    getSheetFor(aid).appendRow([
+      new Date(),
+      aid || 'unknown',
+      String(b.name || '').trim(),
+      String(b.type || 'event'),
+      String(b.value || ''),
+      String(b.ts || new Date().toISOString())
+    ]);
+    return jsonOut({ ok: true, tab: tabNameFor(aid) }, null);
+  } catch (err) {
+    return jsonOut({ ok: false, error: String(err) }, null);
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function doGet(e) {
+  var aid = String((e && e.parameter && e.parameter.announcementId) || '');
+  var cb = e && e.parameter && e.parameter.callback;
+  var rows = getSheetFor(aid).getDataRange().getValues();
+  var sigs = [];
+
+  for (var i = 1; i < rows.length; i++) {
+    if (String(rows[i][3]).toLowerCase().trim() !== 'signature') continue;
+    sigs.push({ name: String(rows[i][2]).trim(), time: String(rows[i][4] || rows[i][5]) });
+  }
+
+  return jsonOut({
+    confirmed: sigs.length,
+    total: ROSTER_TOTAL,
+    tab: tabNameFor(aid),
+    names: sigs.map(function (s) { return s.name; }),
+    signatures: sigs
+  }, cb);
+}
+
+// 'august-2026' -> 'August 2026'. Anything unrecognized falls back to 'Responses'.
+function tabNameFor(aid) {
+  var parts = String(aid || '').trim().split('-');
+  if (parts.length !== 2 || !parts[0] || !parts[1]) return FALLBACK_TAB;
+  var month = parts[0].charAt(0).toUpperCase() + parts[0].slice(1).toLowerCase();
+  return month + ' ' + parts[1];
+}
+
+function getSheetFor(aid) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var name = tabNameFor(aid);
+  var sh = ss.getSheetByName(name);
+  if (!sh) {
+    sh = ss.insertSheet(name);
+    sh.appendRow(HEADERS);
+    sh.setFrozenRows(1);
+    sh.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
+  }
+  return sh;
+}
+
+function jsonOut(obj, cb) {
+  var s = JSON.stringify(obj);
+  if (cb) {
+    return ContentService.createTextOutput(cb + '(' + s + ')')
+      .setMimeType(ContentService.MimeType.JAVASCRIPT);
+  }
+  return ContentService.createTextOutput(s)
+    .setMimeType(ContentService.MimeType.JSON);
+}
